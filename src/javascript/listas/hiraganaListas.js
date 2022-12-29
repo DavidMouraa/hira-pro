@@ -1,13 +1,13 @@
 let hiragana = [];
 
 let objAHira = {
-    ativado: false,
+    ativado: true,
     grupo: [
         ['あ', 'a'],
         ['い', 'i'],
         ['う', 'u'],
         ['え', 'e'],
-        ['お', 'u']
+        ['お', 'o']
     ]
 }
 

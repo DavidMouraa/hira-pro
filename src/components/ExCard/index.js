@@ -1,41 +1,48 @@
 // Importes de estilos
 import './styles.css';
 
-// Importes de listas
-import { hiragana } from '../../javascript/listas/hiraganaListas';
-import { katakana } from '../../javascript/listas/katakanaListas';
-
 // Importes de Ferramentas
-import { useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
+import { pegarIdeos, pegarRoman } from '../../javascript/funcoes/pegarIdeo';
 
 const ExCard = () => {
-    let listaIdeo;
+    let listaIdeo = pegarIdeos();
+    let listaRoman = pegarRoman();
 
-    const [cardIdeo, setCardIdeo] = useState(0);
+    const [cardIdeo, setCardIdeo] = useState(-1);
 
-    useEffect(() => {
-        document.body.addEventListener('load', trocaIdeo());
-    });
+    const [texto, setTexto] = useState('');
+    const [resposta, setResposta] = useState('');
 
-    const arrumarListas = () => {
-        let lista = [];
-        for (let i = 0; i < hiragana.length; i++) {
-            for (let c = 0; c < hiragana[i].length; c++) {
-                lista.push(hiragana[i][c][0]);
-            }
-        }
-        for (let i = 0; i < katakana.length; i++) {
-            for (let c = 0; c < katakana[i].length; c++) {
-                lista.push(katakana[i][c][0]);
-            }
-        }
-        return lista;
-    }
-    listaIdeo = arrumarListas();
+    const inputRef = useRef(null);
 
     const trocaIdeo = () => {
-        let value = Math.floor(Math.random() * listaIdeo.length);
-        setCardIdeo(value);
+        let index = Math.floor(Math.random() * listaIdeo.length);
+        setCardIdeo(index);
+    }
+
+    const limparInput = () => {
+        inputRef.current.value = '';
+        inputRef.current.focus();
+    }
+
+    const pegarResposta = () => {
+        setTexto(inputRef.current.value);
+    }
+
+    const checarResposta = () => {
+        console.log(`Resposta: ${listaRoman[cardIdeo]}`);
+        console.log(`Texto: ${texto.toLowerCase()}`);
+        if (texto.toLowerCase() === listaRoman[cardIdeo]) {
+            setResposta('Acertou!');
+        }
+        else {
+            setResposta('Errou!');
+        }
+    }
+
+    if (cardIdeo === -1) {
+        trocaIdeo();
     }
 
     return (
@@ -44,10 +51,24 @@ const ExCard = () => {
                 <div>
                     <div id="ex-ideograma" className='ex-card'>{listaIdeo[cardIdeo]}</div>
                 </div>
-                <input id='ex-resposta' type='text' placeholder='Digite a Resposta' autoFocus/>
-                <button id='ex-check' onClick={trocaIdeo}>Check</button>
+
+                <input 
+                id='ex-resposta' 
+                type='text' 
+                placeholder='Digite a Resposta'
+                onChange={pegarResposta}
+                ref={inputRef}
+                autoFocus/>
+
+                <button 
+                id='ex-check' 
+                onClick={() => {
+                checarResposta()
+                limparInput()
+                trocaIdeo();
+                }}>Check</button>
             </div>
-            <div>{katakana}</div>
+            <div>{resposta}{listaRoman[cardIdeo]}</div>
         </section>
     );
 }

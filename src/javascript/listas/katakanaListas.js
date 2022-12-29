@@ -1,7 +1,7 @@
 let katakana = [];
 
 let objAKana = {
-    ativado: true,
+    ativado: false,
     grupo: [
         ['ア', 'a'],
         ['イ', 'i'],
