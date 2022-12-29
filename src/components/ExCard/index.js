@@ -3,6 +3,7 @@ import './styles.css';
 
 // Importes de listas
 import { hiragana } from '../../javascript/listas/hiraganaListas';
+import { katakana } from '../../javascript/listas/katakanaListas';
 
 // Importes de Ferramentas
 import { useState, useEffect } from 'react';
@@ -23,6 +24,11 @@ const ExCard = () => {
                 lista.push(hiragana[i][c][0]);
             }
         }
+        for (let i = 0; i < katakana.length; i++) {
+            for (let c = 0; c < katakana[i].length; c++) {
+                lista.push(katakana[i][c][0]);
+            }
+        }
         return lista;
     }
     listaIdeo = arrumarListas();
@@ -41,6 +47,7 @@ const ExCard = () => {
                 <input id='ex-resposta' type='text' placeholder='Digite a Resposta' autoFocus/>
                 <button id='ex-check' onClick={trocaIdeo}>Check</button>
             </div>
+            <div>{katakana}</div>
         </section>
     );
 }

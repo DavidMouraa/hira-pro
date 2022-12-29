@@ -1,85 +1,121 @@
 let hiragana = [];
 
-let aHira = [
-    ['あ', 'a'],
-    ['い', 'i'],
-    ['う', 'u'],
-    ['え', 'e'],
-    ['お', 'u']
-];
+let objAHira = {
+    ativado: false,
+    grupo: [
+        ['あ', 'a'],
+        ['い', 'i'],
+        ['う', 'u'],
+        ['え', 'e'],
+        ['お', 'u']
+    ]
+}
 
-let kHira = [
-    ['か', 'ka'],
-    ['き', 'ki'],
-    ['く', 'ku'],
-    ['け', 'ke'],
-    ['こ', 'ko']
-];
+let objKHira = {
+    ativado: false,
+    grupo: [
+        ['か', 'ka'],
+        ['き', 'ki'],
+        ['く', 'ku'],
+        ['け', 'ke'],
+        ['こ', 'ko']
+    ]
+}
 
-let sHira = [
-    ['さ', 'sa'],
-    ['し', 'shi'],
-    ['す', 'su'],
-    ['せ', 'se'],
-    ['そ', 'so']
-];
+let objSHira = {
+    ativado: false,
+    grupo: [
+        ['さ', 'sa'],
+        ['し', 'shi'],
+        ['す', 'su'],
+        ['せ', 'se'],
+        ['そ', 'so']
+    ]
+}
 
-let tHira = [
-    ['た', 'ta'],
-    ['ち', 'chi'],
-    ['つ', 'tsu'],
-    ['て', 'te'],
-    ['と', 'to']
-];
+let objTHira = {
+    ativado: false,
+    grupo: [
+        ['た', 'ta'],
+        ['ち', 'chi'],
+        ['つ', 'tsu'],
+        ['て', 'te'],
+        ['と', 'to']
+    ]
+}
 
-let nHira = [
-    ['な', 'na'],
-    ['に', 'ni'],
-    ['ぬ', 'nu'],
-    ['ね', 'ne'],
-    ['の', 'no']
-];
+let objNHira = {
+    ativado: false,
+    grupo: [
+        ['な', 'na'],
+        ['に', 'ni'],
+        ['ぬ', 'nu'],
+        ['ね', 'ne'],
+        ['の', 'no']
+    ]
+}
 
-let hHira = [
-    ['は', 'ha'],
-    ['ひ', 'hi'],
-    ['ふ', 'fu'],
-    ['へ', 'he'],
-    ['ほ', 'ho']
-];
+let objHHira = {
+    ativado: false,
+    grupo: [
+        ['は', 'ha'],
+        ['ひ', 'hi'],
+        ['ふ', 'fu'],
+        ['へ', 'he'],
+        ['ほ', 'ho']
+    ]
+}
 
-let mHira = [
-    ['ま', 'ma'],
-    ['み', 'mi'],
-    ['む', 'mu'],
-    ['め', 'me'],
-    ['も', 'mo']
-];
+let objMHira = {
+    ativado: false,
+    grupo: [
+        ['ま', 'ma'],
+        ['み', 'mi'],
+        ['む', 'mu'],
+        ['め', 'me'],
+        ['も', 'mo']
+    ]
+}
 
-let yHira = [
-    ['や', 'ya'],
-    ['-', '-'],
-    ['ゆ', 'yu'],
-    ['-', '-'],
-    ['よ', 'yo']
-];
+let objYHira = {
+    ativado: false,
+    grupo: [
+        ['や', 'ya'],
+        ['-', '-'],
+        ['ゆ', 'yu'],
+        ['-', '-'],
+        ['よ', 'yo']
+    ]
+}
 
-let rHira = [
-    ['ら', 'ra'],
-    ['り', 'ri'],
-    ['る', 'ru'],
-    ['れ', 're'],
-    ['ろ', 'ro']
-];
+let objRHira = {
+    ativado: false,
+    grupo: [
+        ['ら', 'ra'],
+        ['り', 'ri'],
+        ['る', 'ru'],
+        ['れ', 're'],
+        ['ろ', 'ro']
+    ]
+}
 
-let wHira = [
-    ['わ', 'wa'],
-    ['-', '-'],
-    ['を', 'wu'],
-    ['-', '-'],
-    ['ん', 'n']
-];
+let objWHira = {
+    ativado: false,
+    grupo:  [
+        ['わ', 'wa'],
+        ['-', '-'],
+        ['を', 'wo'],
+        ['-', '-'],
+        ['ん', 'n']
+    ]
+}
 
-hiragana.push(rHira);
+let gruposHira = [objAHira, objKHira, objSHira, objTHira, objNHira, objHHira, objMHira, objYHira, objRHira, objWHira];
 
-export {hiragana}
+for (let i = 0; i < gruposHira.length; i++) {
+    if (gruposHira[i].ativado) {
+        hiragana.push(gruposHira[i].grupo);
+    }
+}
+
+export {hiragana};
