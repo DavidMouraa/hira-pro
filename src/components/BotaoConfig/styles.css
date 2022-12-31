@@ -1,0 +1,17 @@
+#botao-config {
+    display: flex;
+
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.300);
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+#botao-config img {
+    object-fit: cover;
+}
