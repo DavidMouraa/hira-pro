@@ -78,9 +78,6 @@ const ExCard = () => {
 
     return (
         <section id='sc-card'>
-            {/* Botão para voltar para a página inicial */}
-            <Link className='button-close' to={'/'}>Fechar</Link>
-
             {/* Campo onde é mostrado resultado */}
             <div id='ex-resultado' ref={resRef}>
                 <p>{resultado}</p>

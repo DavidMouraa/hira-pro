@@ -118,4 +118,4 @@ for (let i = 0; i < gruposHira.length; i++) {
     }
 }
 
-export {hiragana};
+export {hiragana, gruposHira};

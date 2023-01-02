@@ -1,0 +1,16 @@
+.config-card {
+    width: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px 5px;
+    border: 5px solid black;
+    border-bottom: 8px solid black;
+    border-radius: 10px;
+
+    font-size: 1.3em;
+    text-align: center;
+}

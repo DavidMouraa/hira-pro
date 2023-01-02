@@ -1,0 +1,15 @@
+#sc-hiragana-config {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-grupo {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
