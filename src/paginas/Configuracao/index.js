@@ -1,10 +1,10 @@
 import HiraganaConfig from "../../components/HiraganaConfig";
-import BotaoFechar from "../../components/BotaoFechar";
+import Cabecalho from "../../components/Cabecalho";
 
 const Configuracao = () => {
     return (
         <main>
-            <BotaoFechar/>
+            <Cabecalho titulo='Hiragana'/>
             <HiraganaConfig/>
         </main>
     );

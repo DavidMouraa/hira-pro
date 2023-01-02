@@ -3,8 +3,8 @@ import './styles.css';
 const ConfigCard = (props) => {
     return (
         <div className='config-card'>
-            <div>{props.ideo}</div>
-            <div>{props.roman}</div>
+            <div className='config-ideo'>{props.ideo}</div>
+            <div className='config-roman'>{props.roman}</div>
         </div>
     );
 }

@@ -104,13 +104,24 @@ let objWHira = {
     grupo:  [
         ['わ', 'wa'],
         ['-', '-'],
-        ['を', 'wo'],
         ['-', '-'],
-        ['ん', 'n']
+        ['-', '-'],
+        ['を', 'wo']
     ]
 }
 
-let gruposHira = [objAHira, objKHira, objSHira, objTHira, objNHira, objHHira, objMHira, objYHira, objRHira, objWHira];
+let objnHira = {
+    ativado: false,
+    grupo:  [
+        ['わ', 'n'],
+        ['-', '-'],
+        ['-', '-'],
+        ['-', '-'],
+        ['-', '-']
+    ]
+}
+
+let gruposHira = [objAHira, objKHira, objSHira, objTHira, objNHira, objHHira, objMHira, objYHira, objRHira, objWHira, objnHira];
 
 for (let i = 0; i < gruposHira.length; i++) {
     if (gruposHira[i].ativado) {

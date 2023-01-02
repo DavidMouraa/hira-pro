@@ -1,11 +1,11 @@
 // Importes de componentes
 import ExCard from "../../components/ExCard";
-import BotaoFechar from "../../components/BotaoFechar";
+import Cabecalho from "../../components/Cabecalho";
 
 const Exercicios = () => {
     return (
         <div>
-            <BotaoFechar/>
+            <Cabecalho titulo='Exercícios'/>
             <ExCard/>
         </div>
     );

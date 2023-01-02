@@ -3,13 +3,10 @@ import './styles.css';
 import { gruposHira } from '../../javascript/listas/hiraganaListas';
 
 import ConfigCard from '../ConfigCard';
-import { useRef } from 'react';
 
 const HiraganaConfig = () => {
-    const scCardsConfig = useRef(null);
-
     return (
-        <section id="sc-hiragana-config" ref={scCardsConfig}>
+        <section id="sc-hiragana-config">
             {gruposHira.map((item, index) => (
                 <div className='box-grupo'>
                     {gruposHira[index].grupo.map((item) => (

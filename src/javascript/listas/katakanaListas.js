@@ -110,7 +110,18 @@ let objWKana = {
     ]
 }
 
-let gruposKana = [objAKana, objKKana, objSKana, objTKana, objNKana, objHKana, objMKana, objYKana, objRKana, objWKana];
+let objnKana = {
+    ativado: false,
+    grupo:  [
+        ['わ', 'n'],
+        ['-', '-'],
+        ['-', '-'],
+        ['-', '-'],
+        ['-', '-']
+    ]
+}
+
+let gruposKana = [objAKana, objKKana, objSKana, objTKana, objNKana, objHKana, objMKana, objYKana, objRKana, objWKana, objnKana];
 
 for (let i = 0; i < gruposKana.length; i++) {
     if (gruposKana[i].ativado) {
