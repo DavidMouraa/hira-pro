@@ -77,7 +77,7 @@ const ExCard = () => {
     }
 
     return (
-        <section id='sc-card'>
+        <section id='sc-card' className='largura-limitada'>
             {/* Campo onde é mostrado resultado */}
             <div id='ex-resultado' ref={resRef}>
                 <p>{resultado}</p>

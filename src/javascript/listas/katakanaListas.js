@@ -104,9 +104,9 @@ let objWKana = {
     grupo:  [
         ['ワ', 'wa'],
         ['-', '-'],
-        ['ヲ', 'wo'],
         ['-', '-'],
-        ['ン', 'n']
+        ['-', '-'],
+        ['ヲ', 'wo']
     ]
 }
 
@@ -129,4 +129,4 @@ for (let i = 0; i < gruposKana.length; i++) {
     }
 }
 
-export {katakana};
+export {katakana, gruposKana};

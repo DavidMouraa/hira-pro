@@ -1,0 +1,11 @@
+.botao-mais {
+    width: 100%;
+
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: black;
+    color: white;
+
+    border: 0;
+}

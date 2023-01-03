@@ -1,0 +1,22 @@
+.box-ideo-grupo {
+    margin-bottom: 10px;
+}
+
+.box-grupo {
+
+    overflow-y: scroll;
+
+    transition: 0.3s;
+}
+
+.box-grupo::-webkit-scrollbar {
+    display: none;
+}
+
+.box-grupo > div {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

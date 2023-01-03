@@ -8,3 +8,8 @@
 
   box-sizing: border-box;
 }
+
+.largura-limitada {
+  max-width: 300px;
+  margin: auto;
+}

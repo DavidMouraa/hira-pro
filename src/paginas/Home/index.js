@@ -2,7 +2,7 @@ import Iniciar from "../../components/Iniciar";
 
 const Home = () => {
     return (
-        <div>
+        <div className="largura-limitada">
             <Iniciar/>
         </div>
     );
