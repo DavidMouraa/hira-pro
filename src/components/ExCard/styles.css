@@ -43,11 +43,14 @@
 }
 
 .ex-card {
-    width: 150px;
+    min-width: 150px;
 
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.300);
+
+    font-weight: bold;
+    letter-spacing: -10px;
 }
 
 #ex-resposta {

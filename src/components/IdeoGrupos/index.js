@@ -5,32 +5,65 @@ import './styles.css';
 import { useRef, useState } from 'react';
 
 // Importes de listas
-import { gruposHira, atualizaHira } from "../../javascript/listas/hiraganaListas";
-import { atualizaKana, gruposKana } from "../../javascript/listas/katakanaListas";
+import { gruposHira, gruposHiraVar, gruposHiraCom, atualizaHira } from "../../javascript/listas/hiraganaListas";
+import { gruposKana, gruposKanaVar, gruposKanaCom, atualizaKana } from "../../javascript/listas/katakanaListas";
 
 // Importes de componentes
 import ConfigCard from "../ConfigCard";
 import BotaoMais from '../BotaoMais';
 import AgrupaCards from '../AgrupaCards';
 
-const IdeoGrupos = () => {
+const IdeoGrupos = (props) => {
+    // Declarações de Refs
+    const basicoRef = useRef(null);
+    const varianteRef = useRef(null);
+    const combinacoesRef = useRef(null);
 
     // Declarações de States
     const [switchState, setSwitchState] = useState();
-    const [tipoIdeo, setTipoIdeo] = useState('hiragana');
 
     // Declarações de Objetos
     // Objetos do hiragana
-    let HiraGrupos = {
-        nome: 'Hiragana',
+    let objHiraBas = {
+        nome: 'Básico',
         lista: gruposHira,
+        ref: basicoRef,
+        altura: '0px'
+    }
+
+    let objHiraVar = {
+        nome: 'Variantes',
+        lista: gruposHiraVar,
+        ref: varianteRef,
+        altura: '0px'
+    }
+
+    let objHiraCom = {
+        nome: 'Combinações',
+        lista: gruposHiraCom,
+        ref: combinacoesRef,
         altura: '0px'
     }
 
     // Objetos do katakana
-    let KanaGrupos = {
-        nome: 'Katakana',
+    let objKanaBas = {
+        nome: 'Básico',
         lista: gruposKana,
+        ref: basicoRef,
+        altura: '0px'
+    }
+
+    let objKanaVar = {
+        nome: 'Variantes',
+        lista: gruposKanaVar,
+        ref: varianteRef,
+        altura: '0px'
+    }
+
+    let objKanaCom = {
+        nome: 'Combinações',
+        lista: gruposKanaCom,
+        ref: combinacoesRef,
         altura: '0px'
     }
 
@@ -60,18 +93,19 @@ const IdeoGrupos = () => {
         atualizaKana();
     }
 
-    if(tipoIdeo == 'hiragana'){
-        ideosGrupos = [HiraGrupos];
+    if(props.ideoTipo === 'hiragana') {
+        ideosGrupos = [objHiraBas, objHiraVar, objHiraCom];
+        props.setTitulo('Hiragana | ひらがな');
+    }
+    else {
+        ideosGrupos = [objKanaBas, objKanaVar, objKanaCom];
+        props.setTitulo('Katakana | カタカナ');
     }
 
     return (
-        <div className='largura-limitada'>
+        <div id='ideo-grupo' className='largura-limitada'>
             {ideosGrupos.map((grupo) => (
-                <div className='box-ideo-grupo' 
-                onMouseEnter={() => {
-                    pegarAltura(grupo);
-                }}>
-                
+                <div className='box-ideo-grupo' onMouseEnter={() => pegarAltura(grupo)}>
                     <BotaoMais 
                     texto={grupo.nome} 
                     minimizar={minimizarGrupo}

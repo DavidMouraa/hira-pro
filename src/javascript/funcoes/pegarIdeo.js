@@ -1,40 +1,34 @@
 import { hiragana } from "../listas/hiraganaListas";
 import { katakana } from "../listas/katakanaListas";
 
-import { gruposHira } from "../listas/hiraganaListas";
-
-const pegarIdeos = (permissao) => {
-    if (permissao) {
-        let hiraKana = [hiragana, katakana];
-        let lista = [];
-        for (let i1 = 0; i1 < hiraKana.length; i1++) {
-            for (let i2 = 0; i2 < hiraKana[i1].length; i2++) {
-                for (let i3 = 0; i3 < hiraKana[i1][i2].length; i3++) {
-                    if (hiraKana[i1][i2][i3][0] !== '-') {
-                        lista.push(hiraKana[i1][i2][i3][0]);
-                    }
+const pegarIdeos = () => {
+    let hiraKana = [hiragana, katakana];
+    let lista = [];
+    for (let i1 = 0; i1 < hiraKana.length; i1++) {
+        for (let i2 = 0; i2 < hiraKana[i1].length; i2++) {
+            for (let i3 = 0; i3 < hiraKana[i1][i2].length; i3++) {
+                if (hiraKana[i1][i2][i3][0] !== '') {
+                    lista.push(hiraKana[i1][i2][i3][0]);
                 }
             }
         }
-        return lista;
     }
+    return lista;
 }
 
-const pegarRoman = (permissao) => {
-    if (permissao) {
-        let hiraKana = [hiragana, katakana];
-        let lista = [];
-        for (let i1 = 0; i1 < hiraKana.length; i1++) {
-            for (let i2 = 0; i2 < hiraKana[i1].length; i2++) {
-                for (let i3 = 0; i3 < hiraKana[i1][i2].length; i3++) {
-                    if (hiraKana[i1][i2][i3][1] !== '-') {
-                        lista.push(hiraKana[i1][i2][i3][1]);
-                    }
+const pegarRoman = () => {
+    let hiraKana = [hiragana, katakana];
+    let lista = [];
+    for (let i1 = 0; i1 < hiraKana.length; i1++) {
+        for (let i2 = 0; i2 < hiraKana[i1].length; i2++) {
+            for (let i3 = 0; i3 < hiraKana[i1][i2].length; i3++) {
+                if (hiraKana[i1][i2][i3][1] !== '') {
+                    lista.push(hiraKana[i1][i2][i3][1]);
                 }
             }
         }
-        return lista;
     }
+    return lista;
 }
 
 export { pegarIdeos, pegarRoman };

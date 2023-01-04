@@ -1,4 +1,11 @@
 #botao-iniciar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao-iniciar button {
     width: 150px;
     height: 150px;
 
@@ -21,4 +28,10 @@
     height: 100px;
 
     transform: translateX(10px);
+}
+
+#botao-iniciar p {
+    color: red;
+
+    text-align: center;
 }

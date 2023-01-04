@@ -1,5 +1,4 @@
-let katakana = [];
-
+// Katakana basico
 let objAKana = {
     ativado: false,
     grupo: [
@@ -7,7 +6,7 @@ let objAKana = {
         ['イ', 'i'],
         ['ウ', 'u'],
         ['エ', 'e'],
-        ['オ', 'u']
+        ['オ', 'o']
     ]
 }
 
@@ -101,36 +100,190 @@ let objRKana = {
 
 let objWKana = {
     ativado: false,
-    grupo:  [
+    grupo: [
         ['ワ', 'wa'],
         ['', ''],
+        ['ヲ', 'wo'],
         ['', ''],
-        ['', ''],
-        ['ヲ', 'wo']
+        ['ン', 'n']
     ]
 }
 
-let objnKana = {
+// Katakana variantes
+let objKKanaVar = {
+    ativado: false,
+    grupo: [
+        ['ガ', 'ga'],
+        ['ギ', 'gi'],
+        ['グ', 'gu'],
+        ['ゲ', 'ge'],
+        ['ゴ', 'go']
+    ]
+}
+
+let objZKanaVar = {
+    ativado: false,
+    grupo: [
+        ['ザ', 'za'],
+        ['ジ', 'ji'],
+        ['ズ', 'zu'],
+        ['ゼ', 'ze'],
+        ['ゾ', 'zo']
+    ]
+}
+
+let objDKanaVar = {
+    ativado: false,
+    grupo: [
+        ['ダ', 'da'],
+        ['ヂ', 'ji'],
+        ['ヅ', 'zu'],
+        ['デ', 'de'],
+        ['ド', 'do']
+    ]
+}
+
+let objBKanaVar = {
+    ativado: false,
+    grupo: [
+        ['バ', 'ba'],
+        ['ビ', 'bi'],
+        ['ブ', 'bu'],
+        ['ベ', 'be'],
+        ['ボ', 'bo']
+    ]
+}
+
+let objPKanaVar = {
+    ativado: false,
+    grupo: [
+        ['パ', 'pa'],
+        ['ピ', 'pi'],
+        ['プ', 'pu'],
+        ['ペ', 'pe'],
+        ['ポ', 'po']
+    ]
+}
+
+// Katakana Combinações
+let objPyKanaCom = {
     ativado: false,
     grupo:  [
-        ['ン', 'n'],
-        ['', ''],
-        ['', ''],
-        ['', ''],
-        ['', '']
+        ['ピャ', 'pya'],
+        ['ピュ', 'pyu'],
+        ['ピョ', 'pyo']
     ]
 }
 
-let gruposKana = [objAKana, objKKana, objSKana, objTKana, objNKana, objHKana, objMKana, objYKana, objRKana, objWKana, objnKana];
+let objByKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ビャ', 'bya'],
+        ['ビュ', 'byu'],
+        ['ビョ', 'byo']
+    ]
+}
+
+let objJyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ジャ', 'ja'],
+        ['ジュ', 'ju'],
+        ['ジョ', 'jo']
+    ]
+}
+
+let objGyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ギャ', 'gya'],
+        ['ギュ', 'gyu'],
+        ['ギョ', 'gyo']
+    ]
+}
+
+let objRyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['リャ', 'rya'],
+        ['リュ', 'ryu'],
+        ['リョ', 'ryo']
+    ]
+}
+
+let objMyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ミャ', 'mya'],
+        ['ミュ', 'myu'],
+        ['ミョ', 'myo']
+    ]
+}
+
+let objHyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ヒャ', 'hya'],
+        ['ヒュ', 'hyu'],
+        ['ヒョ', 'hyo']
+    ]
+}
+
+let objNyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['ニャ', 'nya'],
+        ['ニュ', 'nyu'],
+        ['ニョ', 'nyo']
+    ]
+}
+
+let objCyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['チャ', 'cha'],
+        ['チュ', 'chu'],
+        ['チョ', 'cho']
+    ]
+}
+
+let objSyKanaCom = {
+    ativado: false,
+    grupo:  [
+        ['シャ', 'sha'],
+        ['シュ', 'shu'],
+        ['ショ', 'sho']
+    ]
+}
+
+let objKykanaCom = {
+    ativado: false,
+    grupo:  [
+        ['キャ', 'kya'],
+        ['キュ', 'kyu'],
+        ['キョ', 'kyo']
+    ]
+}
+
+let gruposKana = [objAKana, objKKana, objSKana, objTKana, objNKana, objHKana, objMKana, objYKana, objRKana, objWKana];
+
+let gruposKanaVar = [objKKanaVar, objZKanaVar, objDKanaVar, objBKanaVar, objPKanaVar];
+
+let gruposKanaCom = [objPyKanaCom, objByKanaCom, objJyKanaCom, objGyKanaCom, objRyKanaCom, objMyKanaCom, objHyKanaCom, objNyKanaCom, objCyKanaCom, objSyKanaCom, objKykanaCom]
+
+let todosKana= [gruposKana, gruposKanaVar, gruposKanaCom];
+
+let katakana = [];
 
 const atualizaKana = () => {
     katakana = [];
-    for (let i = 0; i < gruposKana.length; i++) {
-        if (gruposKana[i].ativado) {
-            katakana.push(gruposKana[i].grupo);
-            console.log(katakana)
+    for(let i1 = 0; i1 < todosKana.length; i1++) {
+        for(let i2 = 0; i2 < todosKana[i1].length; i2++)
+        if (todosKana[i1][i2].ativado) {
+            katakana.push(todosKana[i1][i2].grupo);
         }
     }
+    console.log(katakana)
 }
 
-export {katakana, gruposKana, atualizaKana};
+export {katakana, gruposKana, gruposKanaVar, gruposKanaCom, atualizaKana};

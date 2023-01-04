@@ -8,6 +8,10 @@
     transition: 0.3s;
 }
 
+#ideo-grupo {
+    margin-top: 60px;
+}
+
 .box-grupo::-webkit-scrollbar {
     display: none;
 }
