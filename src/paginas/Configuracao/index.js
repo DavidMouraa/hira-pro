@@ -4,7 +4,7 @@ import Cabecalho from "../../components/Cabecalho";
 const Configuracao = () => {
     return (
         <main className="limited-width">
-            <Cabecalho titulo='Hiragana'/>
+            <Cabecalho titulo='Hiragana | ひらかな'/>
             <HiraganaConfig/>
         </main>
     );

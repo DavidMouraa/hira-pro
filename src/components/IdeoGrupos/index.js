@@ -1,39 +1,40 @@
 // Importes de estilos
 import './styles.css';
 
-//Importes de ferramentas
+// Importes de ferramentas
 import { useRef, useState } from 'react';
 
 // Importes de listas
-import { gruposHira } from "../../javascript/listas/hiraganaListas";
-import { gruposKana } from "../../javascript/listas/katakanaListas";
+import { gruposHira, atualizaHira } from "../../javascript/listas/hiraganaListas";
+import { atualizaKana, gruposKana } from "../../javascript/listas/katakanaListas";
 
 // Importes de componentes
 import ConfigCard from "../ConfigCard";
 import BotaoMais from '../BotaoMais';
+import AgrupaCards from '../AgrupaCards';
 
 const IdeoGrupos = () => {
-    // Declarações de Refs
-    const hiraRef = useRef(null);
-    const KanaRef = useRef(null);
+
+    // Declarações de States
+    const [switchState, setSwitchState] = useState();
+    const [tipoIdeo, setTipoIdeo] = useState('hiragana');
 
     // Declarações de Objetos
+    // Objetos do hiragana
     let HiraGrupos = {
         nome: 'Hiragana',
-        ref: hiraRef,
         lista: gruposHira,
         altura: '0px'
     }
 
+    // Objetos do katakana
     let KanaGrupos = {
         nome: 'Katakana',
-        ref: KanaRef,
         lista: gruposKana,
         altura: '0px'
     }
 
-    // Declarações de Listas
-    let ideosGrupos = [HiraGrupos, KanaGrupos];
+    let ideosGrupos;
 
     // Declarações de Funções
     const minimizarGrupo = (grupo) => {
@@ -43,19 +44,24 @@ const IdeoGrupos = () => {
         else {
             grupo.ref.current.style.height = '0px';
         }
-        console.log(grupo.ref.current.style.height, grupo.ref.current.offsetHeight, grupo.altura)
     }
 
     const pegarAltura = (grupo) => {
         if (grupo.altura === '0px') {
             grupo.altura = grupo.ref.current.offsetHeight + 'px';
             grupo.ref.current.style.height = grupo.ref.current.offsetHeight + 'px';
-            console.log(grupo.ref.current.style.height, grupo.altura);
         }
     }
 
-    const removeIdeoFazio = () => {
-        
+    const grupoSwitch = (grupo, index) => {
+        setSwitchState(!switchState);
+        grupo.lista[index].ativado = switchState;
+        atualizaHira();
+        atualizaKana();
+    }
+
+    if(tipoIdeo == 'hiragana'){
+        ideosGrupos = [HiraGrupos];
     }
 
     return (
@@ -73,13 +79,18 @@ const IdeoGrupos = () => {
 
                     <div className='box-grupo' ref={grupo.ref}>
                         {grupo.lista.map((item, index) => (
-                            <div>
+                            <AgrupaCards 
+                            switch={grupoSwitch}
+                            grupo={grupo} 
+                            index={index} 
+                            state={setSwitchState}
+                            ativado={grupo.lista[index].ativado}>
                                 {grupo.lista[index].grupo.map((item) => (
                                     <ConfigCard
-                                    ideo={item[0]} 
+                                    ideo={item[0]}
                                     roman={item[1]}/>
                                 ))}
-                            </div>
+                            </AgrupaCards>
                         ))}
                     </div>
                 </div>

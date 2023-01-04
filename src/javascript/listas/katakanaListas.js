@@ -81,9 +81,9 @@ let objYKana = {
     ativado: false,
     grupo: [
         ['ヤ', 'ya'],
-        ['-', '-'],
+        ['', ''],
         ['ユ', 'yu'],
-        ['-', '-'],
+        ['', ''],
         ['ヨ', 'yo']
     ]
 }
@@ -103,9 +103,9 @@ let objWKana = {
     ativado: false,
     grupo:  [
         ['ワ', 'wa'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-'],
+        ['', ''],
+        ['', ''],
+        ['', ''],
         ['ヲ', 'wo']
     ]
 }
@@ -113,20 +113,24 @@ let objWKana = {
 let objnKana = {
     ativado: false,
     grupo:  [
-        ['わ', 'n'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-']
+        ['ン', 'n'],
+        ['', ''],
+        ['', ''],
+        ['', ''],
+        ['', '']
     ]
 }
 
 let gruposKana = [objAKana, objKKana, objSKana, objTKana, objNKana, objHKana, objMKana, objYKana, objRKana, objWKana, objnKana];
 
-for (let i = 0; i < gruposKana.length; i++) {
-    if (gruposKana[i].ativado) {
-        katakana.push(gruposKana[i].grupo);
+const atualizaKana = () => {
+    katakana = [];
+    for (let i = 0; i < gruposKana.length; i++) {
+        if (gruposKana[i].ativado) {
+            katakana.push(gruposKana[i].grupo);
+            console.log(katakana)
+        }
     }
 }
 
-export {katakana, gruposKana};
+export {katakana, gruposKana, atualizaKana};

@@ -2,14 +2,13 @@
 import './styles.css';
 
 // Importes de ferramentas
-import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { pegarIdeos, pegarRoman } from '../../javascript/funcoes/pegarIdeo';
 
 const ExCard = () => {
     // Listas dos ideogramas e dos Romanjis
-    let listaIdeo = pegarIdeos();
-    let listaRoman = pegarRoman();
+    let listaIdeo = pegarIdeos(true);
+    let listaRoman = pegarRoman(true);
 
     // Hooks para mostrar na tela
     const [cardIdeo, setCardIdeo] = useState(-1); // Ideograma do card
@@ -61,7 +60,6 @@ const ExCard = () => {
             resRef.current.style.background = 'gray';
             limparInput();
         }
-        console.log(resposta)
     }
 
     // Checa se a tecla enter foi clicada

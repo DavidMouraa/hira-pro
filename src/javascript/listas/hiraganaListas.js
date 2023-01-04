@@ -1,7 +1,8 @@
-let hiragana = [];
+import { useState } from "react";
 
+// Hiragana Basico
 let objAHira = {
-    ativado: true,
+    ativado: false,
     grupo: [
         ['あ', 'a'],
         ['い', 'i'],
@@ -81,9 +82,9 @@ let objYHira = {
     ativado: false,
     grupo: [
         ['や', 'ya'],
-        ['-', '-'],
+        ['', ''],
         ['ゆ', 'yu'],
-        ['-', '-'],
+        ['', ''],
         ['よ', 'yo']
     ]
 }
@@ -103,9 +104,9 @@ let objWHira = {
     ativado: false,
     grupo:  [
         ['わ', 'wa'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-'],
+        ['', ''],
+        ['', ''],
+        ['', ''],
         ['を', 'wo']
     ]
 }
@@ -113,20 +114,178 @@ let objWHira = {
 let objnHira = {
     ativado: false,
     grupo:  [
-        ['わ', 'n'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-'],
-        ['-', '-']
+        ['ん', 'n'],
+        ['', ''],
+        ['', ''],
+        ['', ''],
+        ['', '']
     ]
 }
 
+// Hiragana variantes
+let objGHiraVar = {
+    ativado: false,
+    grupo:  [
+        ['が', 'ga'],
+        ['ぎ', 'gi'],
+        ['ぐ', 'gu'],
+        ['げ', 'ge'],
+        ['ご', 'go']
+    ]
+}
+
+let objZHiraVar = {
+    ativado: false,
+    grupo:  [
+        ['ざ', 'za'],
+        ['じ', 'zi'],
+        ['ず', 'zu'],
+        ['ぜ', 'ze'],
+        ['ぞ', 'zo']
+    ]
+}
+
+let objDHiraVar = {
+    ativado: false,
+    grupo:  [
+        ['だ', 'da'],
+        ['ぢ', 'di'],
+        ['づ', 'du'],
+        ['で', 'de'],
+        ['ど', 'do']
+    ]
+}
+
+let objBHiraVar = {
+    ativado: false,
+    grupo:  [
+        ['ば', 'ba'],
+        ['び', 'bi'],
+        ['ぶ', 'bu'],
+        ['べ', 'be'],
+        ['ぼ', 'bo']
+    ]
+}
+
+let objPHiraVar = {
+    ativado: false,
+    grupo:  [
+        ['ぱ', 'pa'],
+        ['ぴ', 'pi'],
+        ['ぷ', 'pu'],
+        ['ぺ', 'pe'],
+        ['ぽ', 'po']
+    ]
+}
+
+//Hiragana combinações
+let objPyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['ぴゃ', 'pya'],
+        ['', ''],
+        ['ぴゅ', 'pyu'],
+        ['', ''],
+        ['ぴょ', 'pyo']
+    ]
+}
+
+let objByHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['びゃ', 'bya'],
+        ['', ''],
+        ['びゅ', 'byu'],
+        ['', ''],
+        ['びょ', 'byo']
+    ]
+}
+
+let objJyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['じゃ', 'ja'],
+        ['', ''],
+        ['じゅ', 'ju'],
+        ['', ''],
+        ['じょ', 'jo']
+    ]
+}
+
+let objGyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['ぎゃ', 'gya'],
+        ['', ''],
+        ['ぎゅ', 'gyu'],
+        ['', ''],
+        ['ぎょ', 'gyo']
+    ]
+}
+
+let objRyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['りゃ', 'rya'],
+        ['', ''],
+        ['りゅ', 'ryu'],
+        ['', ''],
+        ['りょ', 'ryo']
+    ]
+}
+
+let objMyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['みゃ', 'mya'],
+        ['', ''],
+        ['みゅ', 'myu'],
+        ['', ''],
+        ['みょ', 'myo']
+    ]
+}
+
+let objHyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['ひゃ', 'hya'],
+        ['', ''],
+        ['ひゅ', 'hyu'],
+        ['', ''],
+        ['ひょ', 'hyo']
+    ]
+}
+
+let objNyHiraCom = {
+    ativado: false,
+    grupo:  [
+        ['にゃ', 'nya'],
+        ['', ''],
+        ['にゅ', 'nyu'],
+        ['', ''],
+        ['にょ', 'nyo']
+    ]
+}
+
+// Declarando as listas
 let gruposHira = [objAHira, objKHira, objSHira, objTHira, objNHira, objHHira, objMHira, objYHira, objRHira, objWHira, objnHira];
 
-for (let i = 0; i < gruposHira.length; i++) {
-    if (gruposHira[i].ativado) {
-        hiragana.push(gruposHira[i].grupo);
+let gruposHiraVar = [objGHiraVar, objZHiraVar, objDHiraVar, objBHiraVar, objPHiraVar];
+
+let hiragana = [];
+
+// Função para atualizar a lista "Hiragana"
+const atualizaHira = () => {
+    hiragana = [];
+    for (let i = 0; i < gruposHira.length; i++) {
+        if (gruposHira[i].ativado) {
+            hiragana.push(gruposHira[i].grupo);
+        }
     }
 }
 
-export {hiragana, gruposHira};
+const verificaHira = () => {
+    console.log(hiragana)
+}
+
+export {hiragana, gruposHira, atualizaHira};
