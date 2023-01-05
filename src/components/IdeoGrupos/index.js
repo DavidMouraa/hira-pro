@@ -2,7 +2,7 @@
 import './styles.css';
 
 // Importes de ferramentas
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Importes de listas
 import { gruposHira, gruposHiraVar, gruposHiraCom, atualizaHira } from "../../javascript/listas/hiraganaListas";
@@ -79,10 +79,13 @@ const IdeoGrupos = (props) => {
         }
     }
 
-    const pegarAltura = (grupo) => {
-        if (grupo.altura === '0px') {
-            grupo.altura = grupo.ref.current.offsetHeight + 'px';
-            grupo.ref.current.style.height = grupo.altura;
+    const pegarAltura = (grupos) => {
+        for (let i = 0; i < grupos.length; i++) {
+            if (grupos[i].altura === '0px') {
+                grupos[i].altura = grupos[i].ref.current.offsetHeight + 'px';
+                grupos[i].ref.current.style.height = grupos[i].altura;
+            }
+            console.log(grupos[i].altura);
         }
     }
 
@@ -102,10 +105,14 @@ const IdeoGrupos = (props) => {
         props.setTitulo('Katakana | カタカナ');
     }
 
+    useEffect(() => {
+        document.body.addEventListener('load', pegarAltura(ideosGrupos));
+    })
+
     return (
         <div id='ideo-grupo' className='largura-limitada'>
             {ideosGrupos.map((grupo) => (
-                <div className='box-ideo-grupo' onMouseEnter={() => pegarAltura(grupo)}>
+                <div className='box-ideo-grupo'>
                     <BotaoMais 
                     texto={grupo.nome} 
                     minimizar={minimizarGrupo}

@@ -7,7 +7,7 @@ const BotaoTema = (props) => {
     const [temaIcon, setTemaIcon] = useState(<LampOff/>);
 
     const mudarTemaIcone = () => {
-        if(props.tema === 'tema-claro') {
+        if(props.tema === 'tema-escuro') {
             setTemaIcon(<LampOff/>);
         }
         else {

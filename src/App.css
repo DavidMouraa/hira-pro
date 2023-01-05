@@ -2,13 +2,13 @@
 
 :root {
   /* Paleta de cores claro */
-  --cor01Claro: rgb(187, 151, 255);
+  --cor01Claro: rgb(210, 190, 248);
   --cor02Claro: rgb(27, 27, 27);
   --cor03Claro: rgb(200, 200, 200);
 
   /* Paleta de cores escuro */
   --cor01Escuro: rgb(25, 25, 25);
-  --cor02Escuro: rgb(187, 151, 255);
+  --cor02Escuro: rgb(210, 190, 248);
   --cor03Escuro: rgb(70, 70, 70);
 }
 
