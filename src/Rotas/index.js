@@ -10,7 +10,7 @@ import Configuracao from "../paginas/Configuracao";
 const Rotas = (props) => {
     
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route exact path="/" element={<Home 
                 tema={props.tema}
