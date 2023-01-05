@@ -2,14 +2,20 @@
 
 :root {
   /* Paleta de cores claro */
-  --cor01Claro: rgb(210, 190, 248);
-  --cor02Claro: rgb(27, 27, 27);
-  --cor03Claro: rgb(200, 200, 200);
+  --corFundo1Claro: rgb(250, 234, 239);
+  --corFundo2Claro: rgb(245, 218, 67);
+  --corTextoClaro: rgb(25, 25, 25);
+  --corDetalheClaro: rgb(25, 25, 25);
+  --corInput1Claro: rgb(200, 200, 200);
+  --corInput2Claro: rgb(180, 180, 180);
 
   /* Paleta de cores escuro */
-  --cor01Escuro: rgb(25, 25, 25);
-  --cor02Escuro: rgb(210, 190, 248);
-  --cor03Escuro: rgb(70, 70, 70);
+  --corFundo1Escuro: rgb(12, 18, 65);
+  --corFundo2Escuro: rgb(185, 55, 83);
+  --corTextoEscuro: rgb(225, 225, 225);
+  --corDetalheEscuro: rgb(225, 225, 225);
+  --corInput1Escuro: rgb(12, 11, 85);
+  --corInput2Escuro: rgb(12, 12, 105);
 }
 
 * {
@@ -28,9 +34,9 @@
 
 /* Tema claro */
 .tema-claro {
-  background-color: var(--cor01Claro);
+  background-color: var(--corFundo1Claro);
 }
 
 .tema-escuro {
-  background-color: var(--cor01Escuro);
+  background-color: var(--corFundo1Escuro);
 }

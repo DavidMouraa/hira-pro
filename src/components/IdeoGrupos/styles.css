@@ -19,32 +19,3 @@
 #ideo-grupo {
     min-height: 100vh;
 }
-
-.box-grupo > div {
-    width: 100%;
-    height: 80px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin: 10px 0;
-    border: 1px solid;
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    transition: .1s;
-}
-
-/* Tema claro */
-.tema-claro .box-grupo > div {
-    border-color: var(--cor02Claro);
-    color: var(--cor02Claro);
-}
-
-/* Tema escuro */
-.tema-escuro .box-grupo > div {
-    border-color: var(--cor02Escuro);
-    color: var(--cor02Escuro);
-}

@@ -17,22 +17,46 @@
     border-bottom-width: 1px;
 }
 
+#sc-iniciar #botao-config svg, #sc-iniciar #botao-tema svg {
+    transition: transform .5s;
+}
+
+#sc-iniciar #botao-config:hover svg {
+    transform: rotate(90deg);
+}
+
 /* Tema claro */
 .tema-claro #sc-iniciar button {
-    border-color: var(--cor02Claro);
-    background-color: var(--cor01Claro);
+    border-color: var(--corDetalheClaro);
+    background-color: var(--corFundo1Claro);
 }
 
 .tema-claro #sc-iniciar svg {
-    fill: var(--cor02Claro);
+    fill: var(--corDetalheClaro);
+}
+
+.tema-claro #sc-iniciar #botao-tema:hover {
+    background-color: var(--corDetalheClaro);
+}
+
+.tema-claro #sc-iniciar #botao-tema:hover svg {
+    fill: var(--corFundo1Claro);
 }
 
 /* Tema escuro */
 .tema-escuro #sc-iniciar button {
-    border-color: var(--cor02Escuro);
-    background-color: var(--cor01Escuro);
+    border-color: var(--corDetalheEscuro);
+    background-color: var(--corFundo1Escuro);
 }
 
 .tema-escuro #sc-iniciar svg {
-    fill: var(--cor02Escuro);
+    fill: var(--corDetalheEscuro);
+}
+
+.tema-escuro #sc-iniciar #botao-tema:hover {
+    background-color: var(--corDetalheEscuro);
+}
+
+.tema-escuro #sc-iniciar #botao-tema:hover svg {
+    fill: var(--corFundo1Escuro);
 }

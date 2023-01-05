@@ -40,32 +40,32 @@ header button {
 
 /* Tema claro */
 .tema-claro header {
-    border-color: var(--cor02Claro);
+    border-color: var(--corDetalheClaro);
 
-    background-color: var(--cor01Claro);
-    color: var(--cor02Claro);
+    background-color: var(--corFundo1Claro);
+    color: var(--corTextoClaro);
 }
 
 .tema-claro header svg {
-    fill: var(--cor02Claro);
+    fill: var(--corDetalheClaro);
 }
 
 .tema-claro header button {
-    color: var(--cor02Claro);
+    color: var(--corTextoClaro);
 }
 
 /* Tema escuro */
 .tema-escuro header {
-    border-color: var(--cor02Escuro);
+    border-color: var(--corDetalheEscuro);
 
-    background-color: var(--cor01Escuro);
-    color: var(--cor02Escuro);
+    background-color: var(--corFundo1Escuro);
+    color: var(--corTextoEscuro);
 }
 
 .tema-escuro header svg {
-    fill: var(--cor02Escuro);
+    fill: var(--corDetalheEscuro);
 }
 
 .tema-escuro header button {
-    color: var(--cor02Escuro);
+    color: var(--corTextoEscuro);
 }

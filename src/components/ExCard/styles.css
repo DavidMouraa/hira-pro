@@ -12,9 +12,11 @@
 
     padding: 10px;
     margin-bottom: 20px;
+    border: 5px solid;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.300);
 
+    font-weight: bold;
     text-align: center;
 }
 
@@ -26,6 +28,7 @@
     justify-content: space-between;
     align-items: center;
 
+    border: 5px solid;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.300);
 }
@@ -75,56 +78,62 @@
 
 /* Tema claro */
 .tema-claro #ex-resultado {
-    background-color: var(--cor02Claro);
-    color: var(--cor01Claro);
+    border-color: var(--corDetalheClaro);
+    background-color: var(--corFundo1Claro);
+    color: var(--corTextoClaro);
 }
 
 .tema-claro #box-ex-card {
-    background-color: var(--cor02Claro);
+    border-color: var(--corDetalheClaro);
+    background-color: var(--corFundo1Claro);
 }
 
 .tema-claro .ex-card {
-    background-color: var(--cor01Claro);
-    color: var(--cor02Claro);
+    background-color: var(--corDetalheClaro);
+    color: var(--corFundo1Claro);
 } 
 
 .tema-claro #ex-resposta {
-    background-color: var(--cor01Claro);
+    background-color: var(--corInput1Claro);
+    color: var(--corTextoClaro);
 }
 
 .tema-claro #ex-resposta:focus {
-    background-color: var(--cor03Claro);
+    background-color: var(--corInput2Claro);
 }
 
 .tema-claro #ex-check {
-    background-color: var(--cor02Claro);
-    color: var(--cor01Claro);
+    background-color: var(--corFundo1Claro);
+    color: var(--corTextoClaro);
 }
 
 /* Tema escuro */
 .tema-escuro #ex-resultado {
-    background-color: var(--cor02Escuro);
-    color: var(--cor01Escuro);
+    border-color: var(--corDetalheEscuro);
+    background-color: var(--corFundo1Escuro);
+    color: var(--corTextoEscuro);
 }
 
 .tema-escuro #box-ex-card {
-    background-color: var(--cor02Escuro);
+    border-color: var(--corDetalheEscuro);
+    background-color: var(--corFundo1Escuro);
 }
 
 .tema-escuro .ex-card {
-    background-color: var(--cor01Escuro);
-    color: var(--cor02Escuro);
+    background-color: var(--corDetalheEscuro);
+    color: var(--corFundo1Escuro);
 } 
 
 .tema-escuro #ex-resposta {
-    background-color: var(--cor01Escuro);
+    background-color: var(--corInput2Escuro);
+    color: var(--corTextoEscuro);
 }
 
 .tema-escuro #ex-resposta:focus {
-    background-color: var(--cor03Escuro);
+    background-color: var(--corInput1Escuro);
 }
 
 .tema-escuro #ex-check {
-    background-color: var(--cor02Escuro);
-    color: var(--cor01Escuro);
+    background-color: var(--corFundo1Escuro);
+    color: var(--corTextoEscuro);
 }

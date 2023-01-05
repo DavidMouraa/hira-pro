@@ -30,55 +30,55 @@
 }
 
 /* Tema claro */
-.tema-claro .tema-ativado {
-    border-color: var(--cor01Claro);
+.tema-claro .tema-mais-ativado {
+    border-color: var(--corDetalheClaro);
 
-    background-color: var(--cor02Claro);
-    color: var(--cor01Claro);
+    background-color: var(--corFundo1Claro);
+    color: var(--corDetalheClaro);
 }
 
-.tema-claro .tema-ativado #botao-minimize {
-    fill: var(--cor01Claro);
+.tema-claro .tema-mais-ativado #botao-minimize {
+    fill: var(--corDetalheClaro);
 
     transform: rotate(180deg);
 }
 
-.tema-claro .tema-desativado {
-    border-color: var(--cor02Claro);
+.tema-claro .tema-mais-desativado {
+    border-color: var(--corDetalheClaro);
 
-    background-color: var(--cor01Claro);
-    color: var(--cor02Claro);
+    background-color: var(--corFundo2Claro);
+    color: var(--corDetalheClaro);
 }
 
-.tema-claro .tema-desativado #botao-minimize {
-    fill: var(--cor02Claro);
+.tema-claro .tema-mais-desativado #botao-minimize {
+    fill: var(--corDetalheClaro);
 
     transform: rotate(0deg);
 }
 
 /* Tema escuro */
-.tema-escuro .tema-ativado {
-    border-color: var(--cor01Escuro);
+.tema-escuro .tema-mais-ativado {
+    border-color: var(--corDetalheEscuro);
 
-    background-color: var(--cor02Escuro);
-    color: var(--cor01Escuro);
+    background-color: var(--corFundo1Escuro);
+    color: var(--corTextoEscuro);
 }
 
-.tema-escuro .tema-ativado #botao-minimize {
-    fill: var(--cor01Escuro);
+.tema-escuro .tema-mais-ativado #botao-minimize {
+    fill: var(--corDetalheEscuro);
 
     transform: rotate(180deg);
 }
 
-.tema-escuro .tema-desativado {
-    border-color: var(--cor02Escuro);
+.tema-escuro .tema-mais-desativado {
+    border-color: var(--corDetalheEscuro);
 
-    background-color: var(--cor01Escuro);
-    color: var(--cor02Escuro);
+    background-color: var(--corFundo2Escuro);
+    color: var(--corTextoEscuro);
 }
 
-.tema-escuro .tema-desativado #botao-minimize {
-    fill: var(--cor02Escuro);
+.tema-escuro .tema-mais-desativado #botao-minimize {
+    fill: var(--corTextoEscuro);
 
     transform: rotate(0deg);
 }

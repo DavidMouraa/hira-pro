@@ -4,14 +4,14 @@ import './styles.css';
 import { Minimize } from '../Icones';
 
 const BotaoMais = (props) => {
-    const [temaAtivado, setTemaAtivado] = useState('tema-ativado');
+    const [temaAtivado, setTemaAtivado] = useState('tema-mais-ativado');
 
     const clicou = () => {
-        if(temaAtivado === 'tema-ativado') {
-            setTemaAtivado('tema-desativado');
+        if(temaAtivado === 'tema-mais-ativado') {
+            setTemaAtivado('tema-mais-desativado');
         }
         else {
-            setTemaAtivado('tema-ativado');
+            setTemaAtivado('tema-mais-ativado');
         }
 
     }

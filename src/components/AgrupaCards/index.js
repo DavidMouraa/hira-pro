@@ -1,13 +1,19 @@
-import { useEffect, useRef } from "react";
+import './styles.css';
+
+import { useEffect, useRef, useState } from "react";
 
 const AgrupaCards = (props) => {
+    const [ativadoTema, setAtivadoTema] = useState('tema-agrupa-desativado');
+
     const agrupamento = useRef(null);
 
     const ativadoStyle = () => {
         if(props.ativado) {
+            setAtivadoTema('tema-agrupa-ativado');
             agrupamento.current.style.borderBottomWidth = '1px';
         }
         else {
+            setAtivadoTema('tema-agrupa-desativado');
             agrupamento.current.style.borderBottomWidth = '4px';
         }
     }
@@ -25,7 +31,7 @@ const AgrupaCards = (props) => {
     });
 
     return (
-        <div onClick={trocarStatus} onMouseEnter={trocarSwitch} ref={agrupamento}>
+        <div className={`agrupamento ${ativadoTema}`} onClick={trocarStatus} onMouseEnter={trocarSwitch} ref={agrupamento}>
             {props.children}
         </div>
     )

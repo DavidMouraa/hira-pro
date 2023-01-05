@@ -30,7 +30,7 @@ const ExCard = () => {
         setCardIdeo(index)
     }
 
-    // Limpa o campo de resposta do usuario e foca no mesmo
+    // Limpa o campo de resposta e foca no mesmo
     const limparInput = () => {
         inputRef.current.value = '';
         inputRef.current.focus();
@@ -46,7 +46,7 @@ const ExCard = () => {
         if (resposta.split('').length !== 0) {
             setResultado(`${listaIdeo[cardIdeo]} =  ${listaRoman[cardIdeo]}`);
             if (resposta === listaRoman[cardIdeo]) {
-                resRef.current.style.background = 'green';
+                resRef.current.style.background = 'Blue';
             }
             else {
                 resRef.current.style.background = 'red';
@@ -69,7 +69,7 @@ const ExCard = () => {
         }
     }
 
-    // Muda o ideograma para quando o componente for renderizado
+    // Escolhe um ideograma para quando o componente for renderizado
     if (cardIdeo === -1) {
         trocaIdeo();
     }
