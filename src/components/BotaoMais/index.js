@@ -1,30 +1,27 @@
 import { useRef, useState } from 'react';
 import './styles.css';
 
-const BotaoMais = (props) => {
-    const [ativado, setAtivado] = useState(true);
+import { Minimize } from '../Icones';
 
-    const botaoMais = useRef(null);
+const BotaoMais = (props) => {
+    const [temaAtivado, setTemaAtivado] = useState('tema-ativado');
 
     const clicou = () => {
-        if(ativado) {
-            botaoMais.current.style.backgroundColor = 'black';
-            botaoMais.current.style.color = 'white';
+        if(temaAtivado === 'tema-ativado') {
+            setTemaAtivado('tema-desativado');
         }
         else {
-            botaoMais.current.style.backgroundColor = 'white';
-            botaoMais.current.style.color = 'black';
+            setTemaAtivado('tema-ativado');
         }
-        setAtivado(!ativado);
+
     }
 
     return (
-        <button className='botao-mais'
-        ref={botaoMais}
+        <button className={`botao-mais ${temaAtivado}`}
         onClick={() => {
             props.minimizar(props.grupo);
             clicou();
-        }}>{props.texto}</button>
+        }}>{props.texto} <div id='botao-minimize'><Minimize/></div></button>
     );
 }
 

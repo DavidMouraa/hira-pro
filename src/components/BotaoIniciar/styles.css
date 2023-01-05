@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
 }
-
 #botao-iniciar button {
     width: 150px;
     height: 150px;
@@ -14,20 +13,16 @@
     align-items: center;
 
     margin: 10px;
-    border: 0;
     border-radius: 50%;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.300);
 
     background-color: transparent;
 
     cursor: pointer;
 }
 
-#botao-iniciar img {
-    width: 100px;
-    height: 100px;
-
-    transform: translateX(10px);
+#botao-iniciar svg {
+    width: 150px;
+    height: 150px;
 }
 
 #botao-iniciar p {

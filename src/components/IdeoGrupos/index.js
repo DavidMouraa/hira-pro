@@ -82,7 +82,7 @@ const IdeoGrupos = (props) => {
     const pegarAltura = (grupo) => {
         if (grupo.altura === '0px') {
             grupo.altura = grupo.ref.current.offsetHeight + 'px';
-            grupo.ref.current.style.height = grupo.ref.current.offsetHeight + 'px';
+            grupo.ref.current.style.height = grupo.altura;
         }
     }
 

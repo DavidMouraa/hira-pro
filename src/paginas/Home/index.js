@@ -1,9 +1,11 @@
 import Iniciar from "../../components/Iniciar";
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div className="largura-limitada">
-            <Iniciar/>
+            <Iniciar
+            tema={props.tema}
+            setTema={props.setTema}/>
         </div>
     );
 }

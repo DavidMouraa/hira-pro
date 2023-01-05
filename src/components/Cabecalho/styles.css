@@ -1,6 +1,9 @@
 header {
     position: fixed;
     top: 0;
+
+    z-index: 10;
+
     width: 100%;
 
     display: flex;
@@ -8,9 +11,7 @@ header {
     align-items: center;
 
     padding: 10px;
-    border-bottom: 1px solid black;
-
-    background-color: white;
+    border-bottom: 1px solid;
 }
 
 header div {
@@ -35,4 +36,36 @@ header button {
     font-weight: bold;
 
     cursor: pointer;
+}
+
+/* Tema claro */
+.tema-claro header {
+    border-color: var(--cor02Claro);
+
+    background-color: var(--cor01Claro);
+    color: var(--cor02Claro);
+}
+
+.tema-claro header svg {
+    fill: var(--cor02Claro);
+}
+
+.tema-claro header button {
+    color: var(--cor02Claro);
+}
+
+/* Tema escuro */
+.tema-escuro header {
+    border-color: var(--cor02Escuro);
+
+    background-color: var(--cor01Escuro);
+    color: var(--cor02Escuro);
+}
+
+.tema-escuro header svg {
+    fill: var(--cor02Escuro);
+}
+
+.tema-escuro header button {
+    color: var(--cor02Escuro);
 }

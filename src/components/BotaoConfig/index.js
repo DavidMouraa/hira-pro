@@ -2,11 +2,13 @@ import './styles.css';
 
 import { Link } from 'react-router-dom';
 
+import { Gear } from '../Icones';
+
 const BotaoConfig = () => {
     return (
         <Link to={'/configuracao'}>
             <button id='botao-config'>
-                <img src="./assets/icons/gear.svg"/>
+                <Gear/>
             </button>
         </Link>
     );

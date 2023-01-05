@@ -2,12 +2,14 @@ import './App.css';
 
 import Rotas from './Rotas';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [tema, setTema] = useState('tema-claro');
+
   const carregarHome = () => {
-    if (window.location.href !== 'http://localhost:3000/')
-    window.location.href = 'http://localhost:3000/';
+    // if (window.location.href !== 'http://localhost:3000/')
+    // window.location.href = 'http://localhost:3000/';
   }
 
   useEffect(() => {
@@ -15,8 +17,10 @@ function App() {
   })
 
   return (
-    <div>
-      <Rotas/>
+    <div className={tema}>
+      <Rotas 
+      tema={tema}
+      setTema={setTema}/>
     </div>
   );
 }

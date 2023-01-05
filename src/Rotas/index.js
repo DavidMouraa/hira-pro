@@ -7,11 +7,14 @@ import Exercicios from "../paginas/Exercicios";
 import Configuracao from "../paginas/Configuracao";
 
 // Componente de Rotas
-const Rotas = () => {
+const Rotas = (props) => {
+    
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" element={<Home/>}/>
+                <Route exact path="/" element={<Home 
+                tema={props.tema}
+                setTema={props.setTema}/>}/>
                 <Route path="/exercicios" element={<Exercicios/>}/>
                 <Route path="/configuracao" element={<Configuracao/>}/>
             </Routes>

@@ -3,8 +3,11 @@ import './styles.css';
 
 import { hiragana } from '../../javascript/listas/hiraganaListas';
 import { katakana } from '../../javascript/listas/katakanaListas';
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Play } from '../Icones';
 
 const BotaoIniciar = () => {
     const [mensagemErro, setMensagemErro] = useState();
@@ -23,7 +26,7 @@ const BotaoIniciar = () => {
     return (
         <Link to={linkPlay} id='botao-iniciar' onMouseEnter={checar}>
             <button>
-                <img src='./assets/icons/play.svg'/>
+                <Play/>
             </button>
             <p>{mensagemErro}</p>
         </Link>

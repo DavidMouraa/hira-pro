@@ -9,11 +9,15 @@
 }
 
 #ideo-grupo {
-    margin-top: 60px;
+    padding-top: 60px;
 }
 
 .box-grupo::-webkit-scrollbar {
     display: none;
+}
+
+#ideo-grupo {
+    min-height: 100vh;
 }
 
 .box-grupo > div {
@@ -25,10 +29,22 @@
     align-items: center;
 
     margin: 10px 0;
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 10px;
 
     cursor: pointer;
 
     transition: .1s;
+}
+
+/* Tema claro */
+.tema-claro .box-grupo > div {
+    border-color: var(--cor02Claro);
+    color: var(--cor02Claro);
+}
+
+/* Tema escuro */
+.tema-escuro .box-grupo > div {
+    border-color: var(--cor02Escuro);
+    color: var(--cor02Escuro);
 }
