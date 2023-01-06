@@ -98,9 +98,9 @@ const IdeoGrupos = (props) => {
         }
     }
 
-    const grupoSwitch = (grupo, index) => {
-        setSwitchState(!switchState);
-        grupo.lista[index].ativado = switchState;
+    const grupoSwitch = (grupo, index, status) => {
+        console.log(!status);
+        grupo.lista[index].ativado = !status;
         atualizaHira();
         atualizaKana();
     }
@@ -128,9 +128,7 @@ const IdeoGrupos = (props) => {
                             <AgrupaCards 
                             switch={grupoSwitch}
                             grupo={grupo} 
-                            index={index} 
-                            state={setSwitchState}
-                            ativado={grupo.lista[index].ativado}>
+                            index={index}>
                                 {grupo.lista[index].grupo.map((item) => (
                                     <ConfigCard
                                     ideo={item[0]}

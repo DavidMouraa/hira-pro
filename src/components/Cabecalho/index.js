@@ -18,7 +18,7 @@ const Cabecalho = (props) => {
     }
 
     const trocaTipoIcon = () => {
-        if(window.location.href === 'http://localhost:3000/configuracao' || window.location.href === 'https://davidmouraa.github.io/hira-pro/configuracao'){
+        if(window.location.href === 'http://localhost:3000/configuracao' || window.location.href === 'https://davidmouraa.github.io/hira-pro/configuracao') {
             if(props.ideoTipo === 'katakana'){
                 setIdeoTipoIcon('ひ');
             }

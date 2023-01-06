@@ -7,8 +7,10 @@ const AgrupaCards = (props) => {
 
     const agrupamento = useRef(null);
 
+    const [agrupaStatus, setAgrupaStatus] = useState(false)
+
     const ativadoStyle = () => {
-        if(props.ativado) {
+        if(agrupaStatus) {
             setAtivadoTema('tema-agrupa-ativado');
             agrupamento.current.style.borderBottomWidth = '1px';
         }
@@ -19,11 +21,8 @@ const AgrupaCards = (props) => {
     }
 
     const trocarStatus = () => {
-        props.switch(props.grupo, props.index);
-    }
-
-    const trocarSwitch = () => {
-        props.state(!props.ativado);
+        setAgrupaStatus(!agrupaStatus);
+        props.switch(props.grupo, props.index, agrupaStatus);
     }
 
     useEffect(() => {
@@ -31,7 +30,9 @@ const AgrupaCards = (props) => {
     });
 
     return (
-        <div className={`agrupamento ${ativadoTema}`} onClick={trocarStatus} onMouseEnter={trocarSwitch} ref={agrupamento}>
+        <div className={`agrupamento ${ativadoTema}`} onClick={() => {
+        trocarStatus();}}
+        ref={agrupamento}>
             {props.children}
         </div>
     )
