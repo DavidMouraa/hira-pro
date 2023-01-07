@@ -1,21 +1,21 @@
 // Importes de estilos
 import './styles.css';
 
+import { Circle, Cross, Line } from '../Icones';
+
 // Importes de ferramentas
 import { useRef, useState } from 'react';
 import { pegarIdeos, pegarRoman } from '../../javascript/funcoes/pegarIdeo';
 
-const ExCard = () => {
+const ExCard = (props) => {
     // Listas dos ideogramas e dos Romanjis
     let listaIdeo = pegarIdeos(true);
     let listaRoman = pegarRoman(true);
 
     // Hooks para mostrar na tela
     const [cardIdeo, setCardIdeo] = useState(-1); // Ideograma do card
-    const [resultado, setResultado] = useState('Qual é o ideograma abaixo'); // Mensagem do resultado
-
-    // Hooks para pegar informações
-    const [resposta, setResposta] = useState(''); // Resposta do usuario
+    const [resultado, setResultado] = useState(<Line/>); // Mensagem do resultado
+    const [temaResultado, setTemaResultado] = useState('tema-neutro');
 
     // Hooks para fazer referencia a um elemento
     const inputRef = useRef(null); // Referencia ao input de texto
@@ -38,26 +38,27 @@ const ExCard = () => {
 
     // Pega a resposta digitada pelo usuario
     const pegarResposta = () => {
-        setResposta(inputRef.current.value.toLowerCase().trim());
+        props.setResposta(inputRef.current.value.toLowerCase().trim());
     }
 
     // Checa se a resposta do usuario está correta
     const checarResposta = () => {
-        if (resposta.split('').length !== 0) {
-            setResultado(`${listaIdeo[cardIdeo]} =  ${listaRoman[cardIdeo]}`);
-            if (resposta === listaRoman[cardIdeo]) {
-                resRef.current.style.background = 'Blue';
+        if (props.resposta.split('').length !== 0) {
+            if (props.resposta === listaRoman[cardIdeo]) {
+                setResultado(<Circle/>);
+                setTemaResultado('tema-correto')
             }
             else {
-                resRef.current.style.background = 'red';
+                setResultado(<Cross/>);
+                setTemaResultado('tema-errado');
             }
-            setResposta('');
+            props.setResposta('');
             limparInput();
             trocaIdeo();
         }
         else {
-            setResultado(`Digite um valor valido!`);
-            resRef.current.style.background = 'gray';
+            setResultado(<Line/>)
+            setTemaResultado('tema-neutro');
             limparInput();
         }
     }
@@ -77,8 +78,8 @@ const ExCard = () => {
     return (
         <section id='sc-card' className='largura-limitada'>
             {/* Campo onde é mostrado resultado */}
-            <div id='ex-resultado' ref={resRef}>
-                <p>{resultado}</p>
+            <div id='ex-resultado' className={temaResultado} ref={resRef}>
+                {resultado}
             </div>
 
             <div id='box-ex-card'>
@@ -90,20 +91,14 @@ const ExCard = () => {
                 {/* Campo para digitar a resposta */}
                 <input 
                 id='ex-resposta' 
-                type='text' 
-                placeholder='Digite a Resposta'
+                type='text'
                 onChange={pegarResposta}
                 ref={inputRef}
                 onKeyDown={clicouEnter}
                 autoComplete='off'
+                maxLength={3}
+                value={props.resposta}
                 autoFocus/>
-
-                {/* Botão para confirmar a resposta */}
-                <button 
-                id='ex-check' 
-                onClick={() => {
-                checarResposta();
-                }}>Confirmar</button>
             </div>
         </section>
     );

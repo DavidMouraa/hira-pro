@@ -1,0 +1,28 @@
+.botao-tecla {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 30px;
+    height: 50px;
+
+    margin: 2px;
+    border: 1px solid;
+    border-radius: 5px;
+
+    font-size: 1.2em;
+}
+
+/* Tema claro */
+.tema-claro .botao-tecla {
+    border-color: var(--corDetalheClaro);
+    background-color: var(--corFundo1Claro);
+    color: var(--corTextoClaro);
+}
+
+/* Tema escuro */
+.tema-escuro .botao-tecla {
+    border-color: var(--corDetalheEscuro);
+    background-color: var(--corFundo1Escuro);
+    color: var(--corTextoEscuro);
+}

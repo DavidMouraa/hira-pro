@@ -2,7 +2,7 @@
 import './styles.css';
 
 // Importes de ferramentas
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 // Importes de listas
 import { gruposHira, gruposHiraVar, gruposHiraCom, atualizaHira } from "../../javascript/listas/hiraganaListas";
@@ -20,8 +20,6 @@ const IdeoGrupos = (props) => {
     const combinacoesRef = useRef(null);
 
     // Declarações de States
-    const [switchState, setSwitchState] = useState();
-
     const [alturaBas, setAlturaBas] = useState(0);
     const [alturaVar, setAlturaVar] = useState(0);
     const [alturaCom, setAlturaCom] = useState(0);
@@ -99,7 +97,7 @@ const IdeoGrupos = (props) => {
     }
 
     const grupoSwitch = (grupo, index, status) => {
-        console.log(!status);
+        console.log(grupo.lista[index].ativado);
         grupo.lista[index].ativado = !status;
         atualizaHira();
         atualizaKana();

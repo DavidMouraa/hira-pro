@@ -10,7 +10,7 @@ const AgrupaCards = (props) => {
     const [agrupaStatus, setAgrupaStatus] = useState(false)
 
     const ativadoStyle = () => {
-        if(agrupaStatus) {
+        if(props.grupo.lista[props.index].ativado) {
             setAtivadoTema('tema-agrupa-ativado');
             agrupamento.current.style.borderBottomWidth = '1px';
         }

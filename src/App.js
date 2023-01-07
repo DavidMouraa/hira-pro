@@ -17,7 +17,7 @@ function App() {
   })
 
   return (
-    <div className={tema}>
+    <div id='app' className={tema}>
       <Rotas 
       tema={tema}
       setTema={setTema}/>

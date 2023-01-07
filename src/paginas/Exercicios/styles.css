@@ -1,0 +1,10 @@
+#sc-exercicios {
+    height: calc(100vh - 60px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 60px;
+}
