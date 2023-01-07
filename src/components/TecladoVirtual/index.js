@@ -24,6 +24,7 @@ const TecladoVirtual = (props) => {
             }
         }
         else {
+            console.log();
             props.setResposta('');
         }
     }
