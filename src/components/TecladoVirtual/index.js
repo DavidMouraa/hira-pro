@@ -1,12 +1,12 @@
 import './styles.css';
 
-import teclas from '../../javascript/listas/teclasListas';
-import Tecla from '../Tecla';
 import { useState } from 'react';
 
-const TecladoVirtual = (props) => {
-    const [texto, setTexto] = useState();
+import teclas from '../../javascript/listas/teclasListas';
+import Tecla from '../Tecla';
+import BotaoResposta from '../BotaoResposta';
 
+const TecladoVirtual = (props) => {
     const verificaTamanho = () => {
         if (props.resposta.length < 3) {
             return true;
@@ -40,6 +40,7 @@ const TecladoVirtual = (props) => {
                     ))}
                 </div>
             ))}
+            <BotaoResposta checarResposta={props.checarResposta}/>
         </div>
     );
 }

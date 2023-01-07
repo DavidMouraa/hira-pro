@@ -5,15 +5,6 @@
     align-items: center;
 }
 
-#ex-resultado svg {
-    width: 60px;
-
-    display: flex;
-
-    padding: 10px;
-    border-radius: 50%;
-}
-
 #box-ex-card {
     display: flex;
     flex-direction: column;
@@ -49,18 +40,6 @@
 }
 
 /* Tema claro */
-.tema-claro .tema-neutro svg {
-    fill: var(--corTextoClaro);
-}
-
-.tema-claro .tema-correto svg {
-    fill: var(--corCorretoClaro);
-}
-
-.tema-claro .tema-errado svg {
-    fill: var(--corErradoClaro);
-}
-
 .tema-claro #box-ex-card div {
     color: var(--corTextoClaro);
 }
@@ -71,18 +50,6 @@
 }
 
 /* Tema escuro */
-.tema-escuro .tema-neutro svg {
-    fill: var(--corTextoEscuro);
-}
-
-.tema-escuro .tema-correto svg {
-    fill: var(--corCorretoEscuro);
-}
-
-.tema-escuro .tema-errado svg {
-    fill: var(--corErradoEscuro);
-}
-
 .tema-escuro #box-ex-card div {
     color: var(--corTextoEscuro);
 }

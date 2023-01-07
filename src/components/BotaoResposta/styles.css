@@ -1,36 +1,40 @@
-.botao-tecla {
+#botao-resposta {
+    width: 100%;
+    height: 50px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    min-width: 30px;
-    height: 50px;
-
-    margin: 2px;
+    margin-top: 20px;
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: 50px;
 
-    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#botao-resposta svg {
+    width: 30px;
 }
 
 /* Tema claro */
-.tema-claro .botao-tecla {
+.tema-claro #botao-resposta {
     border-color: var(--corDetalheClaro);
+
     background-color: var(--corFundo1Claro);
-    color: var(--corTextoClaro);
 }
 
-.tema-claro .botao-tecla svg {
+.tema-claro #botao-resposta svg {
     fill: var(--corDetalheClaro);
 }
 
 /* Tema escuro */
-.tema-escuro .botao-tecla {
+.tema-escuro #botao-resposta {
     border-color: var(--corDetalheEscuro);
+
     background-color: var(--corFundo1Escuro);
-    color: var(--corTextoEscuro);
 }
 
-.tema-escuro .botao-tecla svg {
+.tema-escuro #botao-resposta svg {
     fill: var(--corDetalheEscuro);
 }

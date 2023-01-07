@@ -1,0 +1,34 @@
+#ex-resultado svg {
+    width: 60px;
+
+    display: flex;
+
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Tema claro */
+.tema-claro .tema-neutro svg {
+    fill: var(--corTextoClaro);
+}
+
+.tema-claro .tema-correto svg {
+    fill: var(--corCorretoClaro);
+}
+
+.tema-claro .tema-errado svg {
+    fill: var(--corErradoClaro);
+}
+
+/* Tema escuro */
+.tema-escuro .tema-neutro svg {
+    fill: var(--corTextoEscuro);
+}
+
+.tema-escuro .tema-correto svg {
+    fill: var(--corCorretoEscuro);
+}
+
+.tema-escuro .tema-errado svg {
+    fill: var(--corErradoEscuro);
+}
