@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hira-pro/static/css/main.51218261.css",
-    "main.js": "/hira-pro/static/js/main.445d456e.js",
+    "main.css": "/hira-pro/static/css/main.9b1c9b56.css",
+    "main.js": "/hira-pro/static/js/main.b3a2b1d2.js",
     "index.html": "/hira-pro/index.html",
-    "main.51218261.css.map": "/hira-pro/static/css/main.51218261.css.map",
-    "main.445d456e.js.map": "/hira-pro/static/js/main.445d456e.js.map"
+    "main.9b1c9b56.css.map": "/hira-pro/static/css/main.9b1c9b56.css.map",
+    "main.b3a2b1d2.js.map": "/hira-pro/static/js/main.b3a2b1d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.51218261.css",
-    "static/js/main.445d456e.js"
+    "static/css/main.9b1c9b56.css",
+    "static/js/main.b3a2b1d2.js"
   ]
 }
