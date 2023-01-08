@@ -21,7 +21,7 @@ const Cabecalho = (props) => {
     }
 
     const trocaTipoIcon = () => {
-        if(location.pathname == '/configuracao') {
+        if(location.pathname === '/configuracao') {
             if(props.ideoTipo === 'katakana'){
                 setIdeoTipoIcon('ひ');
             }
