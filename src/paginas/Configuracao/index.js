@@ -1,3 +1,5 @@
+import './styles.css';
+
 import { useState } from "react";
 
 import { IdeoGrupos } from "../../components/IdeoGrupos";
@@ -8,7 +10,7 @@ const Configuracao = () => {
     const [ideoTipo, setIdeoTipo] = useState('hiragana');
 
     return (
-        <main className="limited-width">
+        <main id="configuracoes" className="limited-width">
             <Cabecalho 
             titulo={titulo}
             ideoTipo={ideoTipo}

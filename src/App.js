@@ -13,11 +13,18 @@ function App() {
   }
 
   useEffect(() => {
+    if(tema === 'tema-claro'){
+      document.body.classList.remove('tema-escuro');
+    }
+    else {
+      document.body.classList.remove('tema-claro');
+    }
+    document.body.classList.add(tema);
     document.body.addEventListener('load', carregarHome());
   })
 
   return (
-    <div id='app' className={tema}>
+    <div id='app'>
       <Rotas 
       tema={tema}
       setTema={setTema}/>

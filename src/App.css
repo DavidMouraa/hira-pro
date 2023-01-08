@@ -4,8 +4,8 @@
   /* Paleta de cores claro */
   --corFundo1Claro: rgb(234, 191, 243);
   --corFundo2Claro: rgb(245, 218, 67);
-  --corTextoClaro: rgb(25, 25, 25);
-  --corDetalheClaro: rgb(25, 25, 25);
+  --corTextoClaro: rgb(36, 36, 36);
+  --corDetalheClaro: rgb(36, 36, 36);
   --corCorretoClaro: rgb(247, 48, 48);
   --corErradoClaro: rgb(59, 59, 240);
 
@@ -36,11 +36,35 @@
   min-height: 100vh;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+  border-left: 1px solid;
+}
+
 /* Tema claro */
 .tema-claro {
   background-color: var(--corFundo1Claro);
 }
 
+.tema-claro::-webkit-scrollbar {
+  border-color: var(--corDetalheClaro);
+  background-color: var(--corFundo1Claro);
+}
+
+.tema-claro::-webkit-scrollbar-thumb {
+  background-color: var(--corDetalheClaro);
+}
+
+/* Tema escuro */
 .tema-escuro {
   background-color: var(--corFundo1Escuro);
+}
+
+.tema-escuro::-webkit-scrollbar {
+  border-color: var(--corDetalheEscuro);
+  background-color: var(--corFundo1Escuro);
+}
+
+.tema-escuro::-webkit-scrollbar-thumb {
+  background-color: var(--corDetalheEscuro);
 }
