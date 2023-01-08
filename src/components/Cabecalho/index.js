@@ -2,9 +2,12 @@ import './styles.css';
 
 import BotaoFechar from '../BotaoFechar'
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Cabecalho = (props) => {
     const [ideoTipoIcone, setIdeoTipoIcon] = useState();
+
+    const location = useLocation();
 
     const trocaIdeoTipo = () => {
         if(props.ideoTipo === 'katakana'){
@@ -18,7 +21,7 @@ const Cabecalho = (props) => {
     }
 
     const trocaTipoIcon = () => {
-        if(window.location.href === 'http://localhost:3000/configuracao' || window.location.href === 'https://davidmouraa.github.io/hira-pro/configuracao') {
+        if(location.pathname == '/configuracao') {
             if(props.ideoTipo === 'katakana'){
                 setIdeoTipoIcon('ひ');
             }

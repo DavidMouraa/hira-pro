@@ -12,10 +12,12 @@ const AgrupaCards = (props) => {
     const ativadoStyle = () => {
         if(props.grupo.lista[props.index].ativado) {
             setAtivadoTema('tema-agrupa-ativado');
+            setAgrupaStatus(true);
             agrupamento.current.style.borderBottomWidth = '1px';
         }
         else {
             setAtivadoTema('tema-agrupa-desativado');
+            setAgrupaStatus(false);
             agrupamento.current.style.borderBottomWidth = '4px';
         }
     }

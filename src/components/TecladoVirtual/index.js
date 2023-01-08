@@ -46,10 +46,11 @@ const TecladoVirtual = (props) => {
         <div id='teclado-virtual' className='largura-limitada'>
             <button id='botao-teclado' onClick={fecharTeclado}><Keyboard/></button>
             <div ref={tecladoRef}>
-                {teclas.map((item, index) => (
-                    <div>
-                        {teclas[index].map((tecla) => (
+                {teclas.map((item, index1) => (
+                    <div key={index1}>
+                        {teclas[index1].map((tecla, index2) => (
                             <Tecla
+                            key={index1 + index2}
                             tecla={tecla}
                             pegarDigito={pegarDigito}/>
                         ))}

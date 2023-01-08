@@ -114,21 +114,30 @@ const IdeoGrupos = (props) => {
 
     return (
         <div id='ideo-grupo' className='largura-limitada'>
-            {ideosGrupos.map((grupo) => (
-                <div className='box-ideo-grupo' onMouseEnter={() => pegarAltura(ideosGrupos)}>
+            {ideosGrupos.map((grupo, index1) => (
+                <div 
+                key={`ideoGrupo${index1}`}
+                className='box-ideo-grupo' 
+                onMouseEnter={() => pegarAltura(ideosGrupos)}>
                     <BotaoMais 
+                    key={`botao${index1}`}
                     texto={grupo.nome} 
                     minimizar={minimizarGrupo}
                     grupo={grupo}/>
 
-                    <div className='box-grupo' ref={grupo.ref}>
-                        {grupo.lista.map((item, index) => (
+                    <div 
+                    key={`div${index1}`}
+                    className='box-grupo' 
+                    ref={grupo.ref}>
+                        {grupo.lista.map((item, index2) => (
                             <AgrupaCards 
+                            key = {`agrupa${index1 + index2}`}
                             switch={grupoSwitch}
                             grupo={grupo} 
-                            index={index}>
-                                {grupo.lista[index].grupo.map((item) => (
+                            index={index2}>
+                                {grupo.lista[index2].grupo.map((item, index3) => (
                                     <ConfigCard
+                                    key={`config${index1 + index2 + index3}`}
                                     ideo={item[0]}
                                     roman={item[1]}/>
                                 ))}
