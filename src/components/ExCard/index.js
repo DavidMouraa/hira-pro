@@ -4,7 +4,6 @@ import './styles.css';
 const ExCard = (props) => {
     // Pega a resposta digitada pelo usuario
     const pegarResposta = () => {
-        console.log('entrou')
         props.setResposta(props.inputRef.current.value.toLowerCase().trim());
     }
 
@@ -12,6 +11,7 @@ const ExCard = (props) => {
     const clicouEnter = (e) => {
         if (e.keyCode ===  13) {
             props.checarResposta();
+            props.inputRef.current.focus();
         }
     }
 

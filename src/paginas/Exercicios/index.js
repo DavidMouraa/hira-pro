@@ -39,7 +39,6 @@ const Exercicios = () => {
     // Limpa o campo de resposta e foca no mesmo
     const limparInput = () => {
         inputRef.current.value = '';
-        inputRef.current.focus();
     }
 
     // Checa se a resposta do usuario está correta
@@ -72,15 +71,14 @@ const Exercicios = () => {
             temaResultado={temaResultado}
             resRef={resRef}
             resultado={resultado}/>
+
             <ExCard
             resposta={resposta}
             setResposta={setResposta}
             checarResposta={checarResposta}
             trocaIdeo={trocaIdeo}
             inputRef={inputRef}
-            resRef={resRef}
             cardIdeo={cardIdeo}
-            temaResultado={temaResultado}
             resultado={resultado}
             listaIdeo={listaIdeo}/>
 

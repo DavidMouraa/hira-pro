@@ -1,4 +1,6 @@
 #teclado-virtual {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,5 +10,57 @@
 }
 
 #teclado-virtual > div {
+    height: 0;
+
+    overflow: scroll;
+
+    transition: .3s;
+}
+
+#teclado-virtual > div::-webkit-scrollbar {
+    display: none;
+}
+
+#teclado-virtual > div > div {
+    width: 100%;
+
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao-teclado {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#botao-teclado svg {
+    width: 25px;
+}
+
+/* Tema claro */
+.tema-claro #botao-teclado {
+    border-color: var(--corDetalheClaro);
+    background-color: var(--corFundo1Claro);
+}
+
+.tema-claro svg {
+    fill: var(--corDetalheClaro);
+}
+
+/* Tema escuro */
+.tema-escuro #botao-teclado {
+    border-color: var(--corDetalheEscuro);
+    background-color: var(--corFundo1Escuro);
+}
+
+.tema-escuro svg {
+    fill: var(--corDetalheEscuro);
 }
