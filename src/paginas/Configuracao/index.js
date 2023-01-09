@@ -12,12 +12,11 @@ const Configuracao = () => {
     return (
         <main id="configuracoes" className="limited-width">
             <Cabecalho 
-            titulo={titulo}
-            ideoTipo={ideoTipo}
-            setIdeoTipo={setIdeoTipo}/>
+            titulo={titulo}/>
             <IdeoGrupos 
             setTitulo={setTitulo}
-            ideoTipo={ideoTipo}/>
+            ideoTipo={ideoTipo}
+            setIdeoTipo={setIdeoTipo}/>
         </main>
     );
 }

@@ -1,8 +1,11 @@
 // Importes de estilos
 import './styles.css';
 
+// Importes de icones
+import { Active, Desactive } from '../Icones';
+
 // Importes de ferramentas
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 // Importes de listas
 import { gruposHira, gruposHiraVar, gruposHiraCom, atualizaHira } from "../../javascript/listas/hiraganaListas";
@@ -23,6 +26,8 @@ const IdeoGrupos = (props) => {
     const [alturaBas, setAlturaBas] = useState(0);
     const [alturaVar, setAlturaVar] = useState(0);
     const [alturaCom, setAlturaCom] = useState(0);
+    const [ideoTipoIcone, setIdeoTipoIcon] = useState();
+    const [seed, setSeed] = useState(true);
 
     // Declarações de Objetos
     // Objetos do hiragana
@@ -102,6 +107,41 @@ const IdeoGrupos = (props) => {
         atualizaKana();
     }
 
+    const trocaIdeoTipo = () => {
+        if(props.ideoTipo === 'katakana'){
+            props.setIdeoTipo('hiragana');
+        }
+        else {
+            props.setIdeoTipo('katakana');
+        }
+        trocaTipoIcon();
+    }
+
+    const trocaTipoIcon = () => {
+        if(props.ideoTipo === 'katakana') {
+            setIdeoTipoIcon('カ');
+        }
+        else {
+            setIdeoTipoIcon('ひ');
+        }
+    }
+
+    const reset = () => {
+        setSeed(!seed);
+    }
+
+    const mudaTudo = (val) => {
+        console.log(ideosGrupos[0].lista);
+        for(let i1 = 0; i1 < ideosGrupos.length; i1++) {
+            for(let i2 = 0; i2 < ideosGrupos[i1].lista.length; i2++) {
+                ideosGrupos[i1].lista[i2].ativado = val;
+            }
+        }
+        atualizaHira();
+        atualizaKana();
+        reset();
+    }
+
     if(props.ideoTipo === 'hiragana') {
         ideosGrupos = [objHiraBas, objHiraVar, objHiraCom];
         props.setTitulo('Hiragana | ひらがな');
@@ -111,8 +151,28 @@ const IdeoGrupos = (props) => {
         props.setTitulo('Katakana | カタカナ');
     }
 
+    useEffect(() => {
+        document.body.addEventListener('load', trocaTipoIcon());
+    });
+
     return (
-        <div id='ideo-grupo' className='largura-limitada'>
+        <div id='ideo-grupo' className={`largura-limitada ${seed}`}>
+            <div id='box-opcoes'>
+                <button id='botao-ativa' className='botao-opcoes' 
+                onClick={() => mudaTudo(true)}>
+                    <Active/>
+                </button>
+
+                <button id='botao-troca-grupo' className='botao-opcoes' onClick={trocaIdeoTipo}>
+                    {ideoTipoIcone}
+                </button>
+
+                <button id='botao-desativa' className='botao-opcoes' 
+                onClick={() => mudaTudo(false)}>
+                    <Desactive/>
+                </button>
+            </div>
+
             {ideosGrupos.map((grupo, index1) => (
                 <div 
                 key={`ideoGrupo${index1}`}

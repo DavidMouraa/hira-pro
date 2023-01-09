@@ -7,19 +7,18 @@ const AgrupaCards = (props) => {
 
     const agrupamento = useRef(null);
 
-    const [agrupaStatus, setAgrupaStatus] = useState(false)
+    const [agrupaStatus, setAgrupaStatus] = useState(false);
 
     const ativadoStyle = () => {
         if(props.grupo.lista[props.index].ativado) {
             setAtivadoTema('tema-agrupa-ativado');
-            setAgrupaStatus(true);
             agrupamento.current.style.borderBottomWidth = '1px';
         }
         else {
             setAtivadoTema('tema-agrupa-desativado');
-            setAgrupaStatus(false);
             agrupamento.current.style.borderBottomWidth = '4px';
         }
+        setAgrupaStatus(props.grupo.lista[props.index].ativado);
     }
 
     const trocarStatus = () => {
@@ -32,7 +31,8 @@ const AgrupaCards = (props) => {
     });
 
     return (
-        <div className={`agrupamento ${ativadoTema}`} onClick={() => {
+        <div className={`agrupamento ${ativadoTema}`}
+        onClick={() => {
         trocarStatus();}}
         ref={agrupamento}>
             {props.children}

@@ -16,9 +16,6 @@
 
     text-align: center;
 
-    background-color: var(--corDetalheClaro);
-    color: var(--corFundo1Claro);
-
     overflow: scroll;
 
     transition: 0.3s;
@@ -50,4 +47,26 @@
     text-transform: uppercase;
 
     cursor: pointer;
+}
+
+/* Tema claro */
+.tema-claro #box-aviso {
+    background-color: var(--corDetalheClaro);
+    color: var(--corFundo1Claro);
+}
+
+.tema-claro #box-aviso button {
+    background-color: var(--corFundo1Claro);
+    color: var(--corDetalheClaro);
+}
+
+/* Tema escuro */
+.tema-escuro #box-aviso {
+    background-color: var(--corDetalheEscuro);
+    color: var(--corFundo1Escuro);
+}
+
+.tema-escuro #box-aviso button {
+    background-color: var(--corFundo1Escuro);
+    color: var(--corDetalheEscuro);
 }
