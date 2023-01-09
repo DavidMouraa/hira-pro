@@ -8,14 +8,22 @@ header {
     height: 40px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     padding: 0px 15px;
     border-bottom: 1px solid;
 }
 
-header div {
+header > div {
+    max-width: 1024px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header > div > div {
     display: flex;
     align-items: center;
 }

@@ -3,13 +3,18 @@
 
     display: flex;
 
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     border-radius: 50%;
 }
 
 /* Tema claro */
+.tema-claro #ex-resultado svg {
+    background-color: var(--corDetalheClaro);
+}
+
 .tema-claro .tema-neutro svg {
-    fill: var(--corTextoClaro);
+    fill: var(--corFundo1Claro);
 }
 
 .tema-claro .tema-correto svg {
@@ -21,8 +26,12 @@
 }
 
 /* Tema escuro */
+.tema-escuro #ex-resultado svg {
+    background-color: var(--corDetalheEscuro);
+}
+
 .tema-escuro .tema-neutro svg {
-    fill: var(--corTextoEscuro);
+    fill: var(--corFundo1Escuro);
 }
 
 .tema-escuro .tema-correto svg {

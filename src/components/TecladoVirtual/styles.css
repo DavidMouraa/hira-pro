@@ -30,7 +30,7 @@
 }
 
 #botao-teclado {
-    width: 100%;
+    width: 50%;
     height: 20px;
 
     display: flex;
@@ -39,7 +39,7 @@
 
     margin-bottom: 10px;
     border: 1px solid;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
 }
 
 #botao-teclado svg {

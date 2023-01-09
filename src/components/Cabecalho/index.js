@@ -36,10 +36,12 @@ const Cabecalho = (props) => {
     return (
         <header>
             <div>
-                <BotaoFechar/>
-                <h1>{props.titulo}</h1>
+                <div>
+                    <BotaoFechar/>
+                    <h1>{props.titulo}</h1>
+                </div>
+                <button onClick={trocaIdeoTipo}>{ideoTipoIcone}</button>
             </div>
-            <button onClick={trocaIdeoTipo}>{ideoTipoIcone}</button>
         </header>
     );
 }

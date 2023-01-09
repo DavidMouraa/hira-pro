@@ -34,11 +34,11 @@ const TecladoVirtual = (props) => {
     }
 
     const fecharTeclado = () => {
-        if(tecladoRef.current.style.height === '160px') {
+        if(tecladoRef.current.style.height === '210px') {
             tecladoRef.current.style.height = '0px';
         }
         else {
-            tecladoRef.current.style.height = '160px';
+            tecladoRef.current.style.height = '210px';
         }
     }
 
@@ -56,8 +56,8 @@ const TecladoVirtual = (props) => {
                         ))}
                     </div>
                 ))}
+                <BotaoResposta checarResposta={props.checarResposta}/>
             </div>
-            <BotaoResposta checarResposta={props.checarResposta}/>
         </div>
     );
 }

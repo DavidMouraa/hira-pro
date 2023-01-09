@@ -1,0 +1,53 @@
+#box-aviso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 310px;
+    height: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    background-color: var(--corDetalheClaro);
+    color: var(--corFundo1Claro);
+
+    overflow: scroll;
+
+    transition: 0.3s;
+}
+
+#box-aviso::-webkit-scrollbar {
+    display: none;
+}
+
+#box-aviso > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-aviso button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-top: 10px;
+    border: 0;
+    border-radius: 50%;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}

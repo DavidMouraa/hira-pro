@@ -7,6 +7,7 @@ import BotaoConfig from '../BotaoConfig';
 import BotaoTema from '../BotaoTema';
 
 const Iniciar = (props) => {
+
     return (
         <section id='sc-iniciar'>
             <BotaoConfig/>

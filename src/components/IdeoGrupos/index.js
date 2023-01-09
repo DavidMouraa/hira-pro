@@ -97,7 +97,6 @@ const IdeoGrupos = (props) => {
     }
 
     const grupoSwitch = (grupo, index, status) => {
-        console.log(grupo.lista[index].ativado);
         grupo.lista[index].ativado = !status;
         atualizaHira();
         atualizaKana();
