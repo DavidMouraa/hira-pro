@@ -2,20 +2,20 @@
 
 :root {
   /* Paleta de cores claro */
-  --corFundo1Claro: rgb(234, 191, 243);
-  --corFundo2Claro: rgb(236, 210, 63);
+  --corFundo1Claro: rgb(240, 225, 243);
+  --corFundo2Claro: rgb(233, 221, 49);
   --corTextoClaro: rgb(36, 36, 36);
   --corDetalheClaro: rgb(36, 36, 36);
-  --corCorretoClaro: rgb(247, 48, 48);
-  --corErradoClaro: rgb(59, 59, 240);
+  --corCorretoClaro:rgb(59, 59, 240);
+  --corErradoClaro: rgb(247, 48, 48);
 
   /* Paleta de cores escuro */
   --corFundo1Escuro: rgb(12, 18, 65);
   --corFundo2Escuro: rgb(185, 55, 83);
-  --corTextoEscuro: rgb(234, 191, 243);
-  --corDetalheEscuro: rgb(234, 191, 243);
-  --corCorretoEscuro: rgb(219, 57, 57);
-  --corErradoEscuro: rgb(55, 55, 182);
+  --corTextoEscuro: rgb(240, 225, 243);
+  --corDetalheEscuro: rgb(240, 225, 243);
+  --corCorretoEscuro: rgb(63, 63, 212);
+  --corErradoEscuro: rgb(219, 57, 57);
 }
 
 * {

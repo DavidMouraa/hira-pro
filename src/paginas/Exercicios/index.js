@@ -1,7 +1,5 @@
 import './styles.css';
 
-import { Circle, Cross, Line } from '../../components/Icones';
-
 import { useState, useRef } from 'react';
 import { pegarIdeos, pegarRoman } from '../../javascript/funcoes/pegarIdeo';
 
@@ -21,7 +19,7 @@ const Exercicios = () => {
 
     // Hooks para mostrar na tela
     const [cardIdeo, setCardIdeo] = useState(-1); // Ideograma do card
-    const [resultado, setResultado] = useState(<Line/>); // Mensagem do resultado
+    const [resultado, setResultado] = useState('Qual é o ideograma abaixo?'); // Mensagem do resultado
     const [temaResultado, setTemaResultado] = useState('tema-neutro');
 
     // Hooks para fazer referencia a um elemento
@@ -45,12 +43,11 @@ const Exercicios = () => {
     const checarResposta = () => {
         console.log('entrou')
         if (resposta.split('').length !== 0) {
+            setResultado(`${listaIdeo[cardIdeo]} = ${listaRoman[cardIdeo]}`);
             if (resposta === listaRoman[cardIdeo]) {
-                setResultado(<Circle/>);
                 setTemaResultado('tema-correto')
             }
             else {
-                setResultado(<Cross/>);
                 setTemaResultado('tema-errado');
             }
             setResposta('');
@@ -58,7 +55,7 @@ const Exercicios = () => {
             trocaIdeo();
         }
         else {
-            setResultado(<Line/>)
+            setResultado('Digite algo valido')
             setTemaResultado('tema-neutro');
             limparInput();
         }
