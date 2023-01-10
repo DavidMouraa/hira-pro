@@ -41,9 +41,11 @@ const Exercicios = () => {
 
     // Checa se a resposta do usuario está correta
     const checarResposta = () => {
-        console.log('entrou')
+        // Verifica se a resposta é valida
         if (resposta.split('').length !== 0) {
-            setResultado(`${listaIdeo[cardIdeo]} = ${listaRoman[cardIdeo]}`);
+            // Acontece caso o valor seja valido
+            setResultado(`${listaIdeo[cardIdeo]} = ${listaRoman[cardIdeo]}`); // Texto do elemento
+            // Verifica se a resposta do usuario está correta
             if (resposta === listaRoman[cardIdeo]) {
                 setTemaResultado('tema-correto')
             }
@@ -55,12 +57,12 @@ const Exercicios = () => {
             trocaIdeo();
         }
         else {
+            // Acontece caso o valor seja invalido
             setResultado('Digite algo valido')
             setTemaResultado('tema-neutro');
             limparInput();
         }
     }
-
     return (
         <div id='sc-exercicios'>
             <Cabecalho titulo='Exercícios'/>

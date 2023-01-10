@@ -4,8 +4,10 @@ import { LampOff, LampOn } from '../Icones';
 import { useState } from 'react';
 
 const BotaoTema = (props) => {
+    // Declaração dos useStates
     const [temaIcon, setTemaIcon] = useState(<LampOff/>);
 
+    // Muda o icone de botão tema
     const mudarTemaIcone = () => {
         if(props.tema === 'tema-escuro') {
             setTemaIcon(<LampOff/>);
@@ -15,6 +17,7 @@ const BotaoTema = (props) => {
         }
     }
 
+    // Altera o tema da página
     const mudarTema = () => {
         if(props.tema === 'tema-claro') {
             props.setTema('tema-escuro');

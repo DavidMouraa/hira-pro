@@ -1,16 +1,22 @@
+// Importes de estilos
 import './styles.css';
 
+// Importes de ferramentas
 import { useRef } from 'react';
 
+// Importes de icones
 import { Keyboard } from '../Icones';
 
+// Importes de componentes
 import teclas from '../../javascript/listas/teclasListas';
 import Tecla from '../Tecla';
 import BotaoResposta from '../BotaoResposta';
 
 const TecladoVirtual = (props) => {
+    // Declaração de useRefs
     const tecladoRef = useRef(null);
 
+    // Verifica se o tamanho da resposta passou do limite maximo (apenas para o teclado virtual)
     const verificaTamanho = () => {
         if (props.resposta.length < 3) {
             return true;
@@ -20,19 +26,19 @@ const TecladoVirtual = (props) => {
         }
     }
 
+    // Pega o valor da tecla que foi teclada
     const pegarDigito = (digito) => {
-        if (typeof digito === 'string')
-        {
+        if (typeof digito === 'string') {
             if (verificaTamanho()){
                 props.setResposta(props.resposta + digito);
             }
         }
         else {
-            console.log();
             props.setResposta('');
         }
     }
 
+    // Abri e fecha o teclado dependendo do tamanho atual
     const fecharTeclado = () => {
         if(tecladoRef.current.style.height === '210px') {
             tecladoRef.current.style.height = '0px';

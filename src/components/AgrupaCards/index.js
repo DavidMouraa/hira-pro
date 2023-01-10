@@ -3,12 +3,14 @@ import './styles.css';
 import { useEffect, useRef, useState } from "react";
 
 const AgrupaCards = (props) => {
+    // Declaração dos useStates
     const [ativadoTema, setAtivadoTema] = useState('tema-agrupa-desativado');
-
-    const agrupamento = useRef(null);
-
     const [agrupaStatus, setAgrupaStatus] = useState(false);
 
+    // Declaração dos useRefs
+    const agrupamento = useRef(null);
+
+    // Troca entre o tema ativado e desativado
     const ativadoStyle = () => {
         if(props.grupo.lista[props.index].ativado) {
             setAtivadoTema('tema-agrupa-ativado');
@@ -21,11 +23,13 @@ const AgrupaCards = (props) => {
         setAgrupaStatus(props.grupo.lista[props.index].ativado);
     }
 
+    // Troca o estado entre o tema ativado e desativado
     const trocarStatus = () => {
         setAgrupaStatus(!agrupaStatus);
         props.switch(props.grupo, props.index, agrupaStatus);
     }
 
+    // Adiciona evento load ao body
     useEffect(() => {
         document.body.addEventListener('load', ativadoStyle());
     });

@@ -8,7 +8,6 @@ import Configuracao from "../paginas/Configuracao";
 
 // Componente de Rotas
 const Rotas = (props) => {
-    
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>

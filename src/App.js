@@ -5,13 +5,16 @@ import Rotas from './Rotas';
 import { useEffect, useState } from 'react';
 
 function App() {
+  // Declarando hooks useState
   const [tema, setTema] = useState('tema-claro');
 
+  // Declarando funções
   const carregarHome = () => {
-    // if (window.location.href !== 'http://localhost:3000/')
-    // window.location.href = 'http://localhost:3000/';
+    if (window.location.href !== 'http://localhost:3000/')
+    window.location.href = 'http://localhost:3000/';
   }
 
+  // Usando useEffect para adicionar eventos ao elemento body e para mudar o tema.
   useEffect(() => {
     if(tema === 'tema-claro'){
       document.body.classList.remove('tema-escuro');

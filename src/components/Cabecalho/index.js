@@ -1,5 +1,7 @@
+// Importe de estilos
 import './styles.css';
 
+// Importes de componentes
 import BotaoFechar from '../BotaoFechar'
 
 const Cabecalho = (props) => {

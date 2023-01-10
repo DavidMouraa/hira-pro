@@ -30,7 +30,8 @@ const IdeoGrupos = (props) => {
     const [seed, setSeed] = useState(true);
 
     // Declarações de Objetos
-    // Objetos do hiragana
+    // Grupos do Hiragana
+    // Básico do Hiragana
     let objHiraBas = {
         nome: 'Básico',
         lista: gruposHira,
@@ -39,6 +40,7 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaBas
     }
 
+    // Variantes do Hiragana
     let objHiraVar = {
         nome: 'Variantes',
         lista: gruposHiraVar,
@@ -47,6 +49,7 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaVar
     }
 
+    // Combinações do Hiragana
     let objHiraCom = {
         nome: 'Combinações',
         lista: gruposHiraCom,
@@ -55,7 +58,8 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaCom
     }
 
-    // Objetos do katakana
+    // Grupos do Katakana
+    // Básico do Katakana
     let objKanaBas = {
         nome: 'Básico',
         lista: gruposKana,
@@ -64,6 +68,7 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaBas
     }
 
+    // Variantes do Katakana
     let objKanaVar = {
         nome: 'Variantes',
         lista: gruposKanaVar,
@@ -72,6 +77,7 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaVar
     }
 
+    // Combinações do Katakana
     let objKanaCom = {
         nome: 'Combinações',
         lista: gruposKanaCom,
@@ -80,9 +86,11 @@ const IdeoGrupos = (props) => {
         setAltura: setAlturaCom   
     }
 
+    // Declaração da lista que vai guardar os Objetos Hiragana ou Katakana
     let ideosGrupos;
 
     // Declarações de Funções
+    // Minimiza o grupo de ideogramas do Hiragana e Katakana, com base na altura atual
     const minimizarGrupo = (grupo) => {
         if (grupo.ref.current.style.height === '0px') {
             grupo.ref.current.style.height = grupo.altura + 'px';
@@ -92,6 +100,7 @@ const IdeoGrupos = (props) => {
         }
     }
 
+    // Pega a altura dos grupos de ideogramas
     const pegarAltura = (grupos) => {
         for (let i = 0; i < grupos.length; i++) {
             if (grupos[i].altura === 0) {
@@ -101,12 +110,14 @@ const IdeoGrupos = (props) => {
         }
     }
 
+    // Altera o estado de ativado e desativado das listas dentro dos grupos de ideogramas
     const grupoSwitch = (grupo, index, status) => {
         grupo.lista[index].ativado = !status;
         atualizaHira();
         atualizaKana();
     }
 
+    // Troca os tipos de ideogramas que vão aparecer nas configurações
     const trocaIdeoTipo = () => {
         if(props.ideoTipo === 'katakana'){
             props.setIdeoTipo('hiragana');
@@ -117,6 +128,7 @@ const IdeoGrupos = (props) => {
         trocaTipoIcon();
     }
 
+    // Troca o icone do botão que troca o tipo de ideograma
     const trocaTipoIcon = () => {
         if(props.ideoTipo === 'katakana') {
             setIdeoTipoIcon('カ');
@@ -126,10 +138,12 @@ const IdeoGrupos = (props) => {
         }
     }
 
+    // Reseta o componente
     const reset = () => {
         setSeed(!seed);
     }
 
+    // Ativa e desativa todos os grupos do Hiragana e Katakana
     const mudaTudo = (val) => {
         console.log(ideosGrupos[0].lista);
         for(let i1 = 0; i1 < ideosGrupos.length; i1++) {
@@ -142,6 +156,7 @@ const IdeoGrupos = (props) => {
         reset();
     }
 
+    // Altera o título e os grupos de ideogramas que estão sendo exibidos
     if(props.ideoTipo === 'hiragana') {
         ideosGrupos = [objHiraBas, objHiraVar, objHiraCom];
         props.setTitulo('Hiragana | ひらがな');
@@ -151,6 +166,7 @@ const IdeoGrupos = (props) => {
         props.setTitulo('Katakana | カタカナ');
     }
 
+    // Adiciona um evento de load ao body
     useEffect(() => {
         document.body.addEventListener('load', trocaTipoIcon());
     });

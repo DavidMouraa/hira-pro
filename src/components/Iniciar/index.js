@@ -7,8 +7,8 @@ import BotaoConfig from '../BotaoConfig';
 import BotaoTema from '../BotaoTema';
 
 const Iniciar = (props) => {
-
     return (
+        // Componente que mostra os botões da página principal
         <section id='sc-iniciar'>
             <BotaoConfig/>
             <BotaoIniciar/>
