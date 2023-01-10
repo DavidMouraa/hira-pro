@@ -1,11 +1,6 @@
 #ideo-grupo {
     padding-top: 50px;
     min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #box-opcoes {

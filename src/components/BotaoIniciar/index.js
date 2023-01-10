@@ -48,7 +48,7 @@ const BotaoIniciar = () => {
                     <Play/>
                 </button>
             </Link>
-            <Aviso texto='Antes de começar a praticar, clique na engrenagem e escolha os ideogramas que deseja aprender'
+            <Aviso texto='Antes de começar a praticar, clique na engrenagem e escolha os ideogramas que deseja aprender.'
             avisoRef={avisoRef}/>
         </div>
     );
