@@ -1,3 +1,4 @@
+/* Estilo */
 .ideogram-card {
     height: 100px;
     display: flex;
@@ -19,4 +20,12 @@
 }
 .ideogram-card .romanji {
     font-size: 1.7rem;
+}
+
+/* Animações */
+@keyframes click-button {
+    50% {
+        border: 0px solid black;
+        transform: scale(.95);
+    }
 }
