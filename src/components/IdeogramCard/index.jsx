@@ -1,6 +1,7 @@
-const IdeogramCard = ({ideogram, romanji}) => {
+const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
     return (
-        <div>
+        <div
+        style={{width: `calc(100% / ${sizeDivision} - 10px)`}}>
             <p>{ideogram}</p>
             <p>{romanji}</p>
         </div>
