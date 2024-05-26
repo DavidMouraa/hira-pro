@@ -13,13 +13,21 @@
     transition: border-bottom .1s ease;
 }
 .ideogram-card:hover {
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid;
 }
 .ideogram-card .ideogram {
     font-size: 2.1rem;
 }
 .ideogram-card .romanji {
     font-size: 1.7rem;
+}
+
+/* Selecionado */
+.selected {
+    color: white;
+    border-color: white;
+    outline: 2px solid black;
+    background: black;
 }
 
 /* Animações */
