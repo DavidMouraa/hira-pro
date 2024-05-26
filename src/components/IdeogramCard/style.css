@@ -1,0 +1,39 @@
+/* Estilo */
+.ideogram-card {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    background: white;
+    font-weight: bold;
+    transition: border-bottom .1s ease;
+}
+.ideogram-card:hover {
+    border-bottom: 5px solid;
+}
+.ideogram-card .ideogram {
+    font-size: 2.1rem;
+}
+.ideogram-card .romanji {
+    font-size: 1.7rem;
+}
+
+/* Selecionado */
+.selected {
+    color: white;
+    border-color: white;
+    outline: 2px solid black;
+    background: black;
+}
+
+/* Animações */
+@keyframes click-button {
+    50% {
+        border: 0px solid black;
+        transform: scale(.95);
+    }
+}
