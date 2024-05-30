@@ -2,13 +2,13 @@ import { useRef } from "react"
 import "./style.css"
 import { useEffect } from "react"
 
-const IdeogramCard = ({ideogram, romanji, sizeDivision, selection}) => {
+const IdeogramCard = ({ideogram, romanji, sizeDivision, selection, writingSystemKey, kanaKey, setKey, writingSystems, setWritingSystems}) => {
     const ideogramCardRef = useRef()
 
     const setClickAnimation = () => {
         const ideogramCard = ideogramCardRef.current
 
-        ideogramCard.style.animation = "click-button .3s ease"
+        ideogramCard.style.animation = "click-button .2s ease"
     }
 
     const removeClickAnimation = () => {
@@ -17,8 +17,26 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, selection}) => {
         ideogramCard.style.animation = ""
     }
 
+    const setSelectionStatus = () => {
+        setWritingSystems(oldWritingSystems => ({
+            ...oldWritingSystems,
+            [writingSystemKey]: {
+                ...oldWritingSystems[writingSystemKey],
+                [kanaKey]: {
+                    ...oldWritingSystems[writingSystemKey][kanaKey], 
+                    [setKey]: [
+                        ...oldWritingSystems[writingSystemKey][kanaKey][setKey].map((item) => 
+                            item.ideogram === ideogram ? {...item, selection: !item.selection} : item
+                        )
+                    ]
+                }
+            }
+        }))
+    }
+
     const handleClick = () => {
         setClickAnimation()
+        setSelectionStatus()
     }
 
     useEffect(() => {
@@ -27,7 +45,7 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, selection}) => {
         selection ? ideogramCard.classList.add("selected") : ideogramCard.classList.remove("selected")
 
         if (!ideogram && !romanji) ideogramCard.style.visibility = "hidden"
-    }, [])
+    }, [writingSystems])
 
     return (
         <div

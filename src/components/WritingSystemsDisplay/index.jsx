@@ -2,7 +2,7 @@ import IdeogramCard from "../IdeogramCard"
 
 import "./style.css"
 
-const WritingSystemsDisplay = ({writingSystems, seWritingSystems}) => {
+const WritingSystemsDisplay = ({writingSystems, setWritingSystems}) => {
     
 
     return (
@@ -29,7 +29,12 @@ const WritingSystemsDisplay = ({writingSystems, seWritingSystems}) => {
                                         ideogram={item.ideogram}
                                         romanji={item.romanji}
                                         sizeDivision={writingSystems[writingSystemKey][kanaKey][setKey].length}
-                                        selection={item.selection} />
+                                        selection={item.selection}
+                                        writingSystemKey={writingSystemKey}
+                                        kanaKey={kanaKey}
+                                        setKey={setKey}
+                                        writingSystems={writingSystems}
+                                        setWritingSystems={setWritingSystems} />
 
                                     ))}
                                 </div>
