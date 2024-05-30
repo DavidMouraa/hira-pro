@@ -2,19 +2,19 @@ import { useRef } from "react"
 import "./style.css"
 import { useEffect } from "react"
 
-const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
+const IdeogramCard = ({ideogram, romanji, sizeDivision, selection}) => {
     const ideogramCardRef = useRef()
-
-    const removeClickAnimation = () => {
-        const ideogramCard = ideogramCardRef.current
-
-        ideogramCard.style.animation = ""
-    }
 
     const setClickAnimation = () => {
         const ideogramCard = ideogramCardRef.current
 
         ideogramCard.style.animation = "click-button .3s ease"
+    }
+
+    const removeClickAnimation = () => {
+        const ideogramCard = ideogramCardRef.current
+
+        ideogramCard.style.animation = ""
     }
 
     const handleClick = () => {
@@ -23,6 +23,8 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
 
     useEffect(() => {
         const ideogramCard = ideogramCardRef.current
+
+        selection ? ideogramCard.classList.add("selected") : ideogramCard.classList.remove("selected")
 
         if (!ideogram && !romanji) ideogramCard.style.visibility = "hidden"
     }, [])

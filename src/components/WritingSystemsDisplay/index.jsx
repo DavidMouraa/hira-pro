@@ -28,7 +28,8 @@ const WritingSystemsDisplay = ({writingSystems, seWritingSystems}) => {
                                         key={`${writingSystemIndex}${kanaIndex}${setIndex}${itemIndex}`}
                                         ideogram={item.ideogram}
                                         romanji={item.romanji}
-                                        sizeDivision={writingSystems[writingSystemKey][kanaKey][setKey].length} />
+                                        sizeDivision={writingSystems[writingSystemKey][kanaKey][setKey].length}
+                                        selection={item.selection} />
 
                                     ))}
                                 </div>
