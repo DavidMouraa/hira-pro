@@ -3,22 +3,29 @@ import IdeogramCard from "../IdeogramCard"
 import "./style.css"
 
 const WritingSystemsDisplay = ({writingSystems, seWritingSystems}) => {
-    console.log(writingSystems.hiragana.basics.setA[0])
+    
 
     return (
         <div className="writing-systems-display">
-            {Object.keys(writingSystems).map((writingSystemKey) => (
+            {Object.keys(writingSystems).map((writingSystemKey, writingSystemIndex) => (
 
-                <div className="writing-system">
-                    {Object.keys(writingSystems[writingSystemKey]).map((kanaKey) => (
+                <div 
+                key={`${writingSystemIndex}`}
+                className="writing-system">
+                    {Object.keys(writingSystems[writingSystemKey]).map((kanaKey, kanaIndex) => (
 
-                        <div className="kana">
-                            {Object.keys(writingSystems[writingSystemKey][kanaKey]).map((setKey) => (
+                        <div 
+                        key={`${writingSystemIndex}${kanaIndex}`}
+                        className="kana">
+                            {Object.keys(writingSystems[writingSystemKey][kanaKey]).map((setKey, setIndex) => (
 
-                                <div className="set">
-                                    {writingSystems[writingSystemKey][kanaKey][setKey].map((item) => (
+                                <div 
+                                key={`${writingSystemIndex}${kanaIndex}${setIndex}`}
+                                className="set">
+                                    {writingSystems[writingSystemKey][kanaKey][setKey].map((item, itemIndex) => (
 
                                         <IdeogramCard
+                                        key={`${writingSystemIndex}${kanaIndex}${setIndex}${itemIndex}`}
                                         ideogram={item.ideogram}
                                         romanji={item.romanji}
                                         sizeDivision={writingSystems[writingSystemKey][kanaKey][setKey].length} />

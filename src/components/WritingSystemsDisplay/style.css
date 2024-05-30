@@ -9,9 +9,6 @@
     display: flex;
     margin-right: 200%;
 }
-/* .writing-systems-display .writing-system:not(:first-child) {
-    display: none;
-} */
 .writing-systems-display .writing-system .kana {
     min-width: 100%;
     height: 100%;
