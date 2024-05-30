@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import "./style.css"
+import { useEffect } from "react"
 
 const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
     const ideogramCardRef = useRef()
@@ -19,6 +20,12 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
     const handleClick = () => {
         setClickAnimation()
     }
+
+    useEffect(() => {
+        const ideogramCard = ideogramCardRef.current
+
+        if (!ideogram && !romanji) ideogramCard.style.visibility = "hidden"
+    }, [])
 
     return (
         <div
