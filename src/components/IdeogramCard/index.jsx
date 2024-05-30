@@ -1,14 +1,17 @@
+import { useRef } from "react"
 import "./style.css"
 
 const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
+    const ideogramCardRef = useRef()
+
     const removeClickAnimation = () => {
-        const ideogramCard = document.querySelector('.ideogram-card')
+        const ideogramCard = ideogramCardRef.current
 
         ideogramCard.style.animation = ""
     }
 
     const setClickAnimation = () => {
-        const ideogramCard = document.querySelector('.ideogram-card')
+        const ideogramCard = ideogramCardRef.current
 
         ideogramCard.style.animation = "click-button .3s ease"
     }
@@ -19,6 +22,7 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision}) => {
 
     return (
         <div
+        ref={ideogramCardRef}
         className="ideogram-card"
         style={{width: `calc(100% / ${sizeDivision} - 10px)`}}
         onClick={handleClick}
