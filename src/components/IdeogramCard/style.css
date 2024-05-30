@@ -10,6 +10,8 @@
     margin: 5px;
     background: white;
     font-weight: bold;
+    cursor: pointer;
+    user-select: none;
     transition: border-bottom .1s ease;
 }
 .ideogram-card:hover {
@@ -20,6 +22,7 @@
 }
 .ideogram-card .romanji {
     font-size: 1.7rem;
+    
 }
 
 /* Selecionado */
