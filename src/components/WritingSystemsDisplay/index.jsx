@@ -1,9 +1,15 @@
+import { useEffect, useState } from "react"
 import IdeogramCard from "../IdeogramCard"
 
 import "./style.css"
 
 const WritingSystemsDisplay = ({writingSystems, setWritingSystems}) => {
-    
+    const [mouseDownStatus, setMouseDownStatus] = useState(false)
+
+    useEffect(() => {
+        document.addEventListener("mousedown", () => setMouseDownStatus(true))
+        document.addEventListener("mouseup", () => setMouseDownStatus(false))
+    }, [])
 
     return (
         <div className="writing-systems-display">
@@ -29,6 +35,7 @@ const WritingSystemsDisplay = ({writingSystems, setWritingSystems}) => {
                                         ideogram={item.ideogram}
                                         romanji={item.romanji}
                                         sizeDivision={writingSystems[writingSystemKey][kanaKey][setKey].length}
+                                        mouseDownStatus={mouseDownStatus}
                                         selection={item.selection}
                                         writingSystemKey={writingSystemKey}
                                         kanaKey={kanaKey}

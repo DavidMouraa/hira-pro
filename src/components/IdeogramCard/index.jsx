@@ -1,8 +1,9 @@
-import { useRef } from "react"
 import "./style.css"
-import { useEffect } from "react"
+import { useEffect, useRef, useState } from "react"
 
-const IdeogramCard = ({ideogram, romanji, sizeDivision, selection, writingSystemKey, kanaKey, setKey, writingSystems, setWritingSystems}) => {
+const IdeogramCard = ({ideogram, romanji, sizeDivision, mouseDownStatus, selection, writingSystemKey, kanaKey, setKey, writingSystems, setWritingSystems}) => {
+    const [canSelect, setCanSelect] = useState(true)
+
     const ideogramCardRef = useRef()
 
     const setClickAnimation = () => {
@@ -34,9 +35,12 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, selection, writingSystem
         }))
     }
 
-    const handleClick = () => {
-        setClickAnimation()
-        setSelectionStatus()
+    const handleSelection = (e) => {
+        console.log(e.type)
+        if (e.type === "mousedown" || mouseDownStatus) {
+            setClickAnimation()
+            setSelectionStatus()
+        }
     }
 
     useEffect(() => {
@@ -52,7 +56,9 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, selection, writingSystem
         ref={ideogramCardRef}
         className="ideogram-card"
         style={{width: `calc(100% / ${sizeDivision} - 10px)`}}
-        onClick={handleClick}
+        
+        onMouseEnter={handleSelection}
+        onMouseDown={handleSelection}
         onAnimationEnd={removeClickAnimation}>
             <p className="ideogram">{ideogram}</p>
             <p className="romanji">{romanji}</p>
