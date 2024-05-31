@@ -2,8 +2,6 @@ import "./style.css"
 import { useEffect, useRef, useState } from "react"
 
 const IdeogramCard = ({ideogram, romanji, sizeDivision, mouseDownStatus, selection, writingSystemKey, kanaKey, setKey, writingSystems, setWritingSystems}) => {
-    const [canSelect, setCanSelect] = useState(true)
-
     const ideogramCardRef = useRef()
 
     const setClickAnimation = () => {
@@ -56,7 +54,6 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, mouseDownStatus, selecti
         ref={ideogramCardRef}
         className="ideogram-card"
         style={{width: `calc(100% / ${sizeDivision} - 10px)`}}
-        
         onMouseEnter={handleSelection}
         onMouseDown={handleSelection}
         onAnimationEnd={removeClickAnimation}>

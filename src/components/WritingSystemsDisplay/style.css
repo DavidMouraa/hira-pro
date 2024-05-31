@@ -1,11 +1,11 @@
 .writing-systems-display {
     display: flex;
-    min-width: 100%;
+    width: 100%;
     height: 100%;
     overflow-x: hidden;
 }
 .writing-systems-display .writing-system {
-    max-width: 100%;
+    min-width: 100%;
     display: flex;
     margin-right: 200%;
 }
