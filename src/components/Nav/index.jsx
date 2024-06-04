@@ -7,6 +7,13 @@ import "./style.css"
 const Nav = (props) => {
     const navRef = useRef()
 
+    const setWritingSystemsScroll = (item) => {
+        const writingSystemsDisplay = document.querySelector(".writing-systems-display")
+        const target = document.getElementById(item.value)
+        
+        writingSystemsDisplay.scrollLeft = target.offsetLeft
+    }
+
     const setSelectedStyle = (array, item) => {
         Array.from(array).forEach(button => {
             button === item ? button.classList.add("selected") : button.classList.remove("selected")
@@ -22,6 +29,7 @@ const Nav = (props) => {
                 item.addEventListener("click", () => {
                     setClickAnimation(item)
                     setSelectedStyle(navButtons, item)
+                    setWritingSystemsScroll(item)
                 })
         })
     }, [])

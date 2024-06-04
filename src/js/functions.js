@@ -1,8 +1,6 @@
 const setClickAnimation = (element) => {
     element.style.animation = "click-button .2s ease"
 
-    console.log(element.value)
-
     element.addEventListener("animationend", () => removeClickAnimation(element))
 }
 

@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 .writing-systems-display .writing-system {
     min-width: 100%;
