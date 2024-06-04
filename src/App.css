@@ -26,3 +26,18 @@
 .button:hover {
   border-bottom: 5px solid;
 }
+
+.selected {
+  color: white;
+  border-color: white;
+  outline: 2px solid black;
+  background: black;
+}
+
+/* Animações */
+@keyframes click-button {
+  50% {
+      border: 0px solid black;
+      transform: scale(.95);
+  }
+}

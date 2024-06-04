@@ -17,6 +17,7 @@ const WritingSystemsDisplay = ({writingSystems, setWritingSystems}) => {
 
                 <div 
                 key={`${writingSystemIndex}`}
+                id={writingSystemKey}
                 className="writing-system">
                     {Object.keys(writingSystems[writingSystemKey]).map((kanaKey, kanaIndex) => (
 
