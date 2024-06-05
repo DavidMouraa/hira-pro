@@ -1,43 +1,83 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import setClickAnimation from "../../js/functions"
 
 import "./style.css"
 
-const Nav = (props) => {
+const Nav = () => {
+    const [navPath, setNavPath] = useState(['hiragana', 'basics'])
+
     const navRef = useRef()
 
-    const setWritingSystemsScroll = (item) => {
+    const setWritingSystemsScroll = () => {
         const writingSystemsDisplay = document.querySelector(".writing-systems-display")
-        const target = document.getElementById(item.value)
+        const target = document.querySelector(`#${navPath[0]} .${navPath[1]}`)
         
         writingSystemsDisplay.scrollLeft = target.offsetLeft
     }
 
-    const setSelectedStyle = (array, item) => {
-        Array.from(array).forEach(button => {
-            button === item ? button.classList.add("selected") : button.classList.remove("selected")
+    const setSelectedStyle = (target) => {
+        const lists = Array.from(navRef.current.querySelectorAll("ul"))
+
+        lists.forEach((list, index) => {
+            const buttons = Array.from(list.querySelectorAll("button"))
+
+            buttons.forEach((button) => {
+                button.value === navPath[index] ?
+                button.classList.add("selected") :
+                button.classList.remove("selected")
+            })
         })
+    }
+
+    const updateNavRef = (item) => {
+        const lists = Array.from(navRef.current.querySelectorAll("ul"))
+        let pathPos = 0
+        let newNavPath = [...navPath]
+
+        lists.forEach((list, listIndex) => {
+            if (list.contains(item)) pathPos = listIndex
+        })
+
+        newNavPath[pathPos] = item.value
+        
+        setNavPath(newNavPath)
+    }
+
+    const handleClick = (e) => {
+        const {target} = e
+        
+        setClickAnimation(target)
+        updateNavRef(target)
     }
 
     useEffect(() => {
         const navButtons = navRef.current.querySelectorAll("button")
 
-        Array.from(navButtons).forEach((item, index) => {
-                if (!index) item.classList.add("selected")
+        setSelectedStyle()
+        setWritingSystemsScroll()
 
-                item.addEventListener("click", () => {
-                    setClickAnimation(item)
-                    setSelectedStyle(navButtons, item)
-                    setWritingSystemsScroll(item)
-                })
+        Array.from(navButtons).forEach((item) => {
+            item.addEventListener("click", handleClick)
         })
-    }, [])
+
+        return () => {
+            Array.from(navButtons).forEach((item) => {
+                item.removeEventListener("click", handleClick)
+            })
+        }
+    }, [navPath])
 
     return (
         <nav ref={navRef} className="nav">
-            <ul className="list">
-                {props.children}
+            <ul>
+                <li><button className="button" value="hiragana">Hiragana</button></li>
+                <li><button className="button" value="katakana">Katakana</button></li>
+            </ul>
+            <ul>
+                <li><button className="button" value="basics">Basicos</button></li>
+                <li><button className="button" value="variants">Variantes</button></li>
+                <li><button className="button" value="combinations">Combinação</button></li>
             </ul>
         </nav>
     )

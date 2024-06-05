@@ -1,18 +1,19 @@
 .nav {
-    height: 50px;
+    height: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.nav .list {
+.nav ul {
     display: flex;
     list-style: none;
 }
-.nav .list li button {
+.nav ul li button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 120px;
     height: 30px;
     text-decoration: none;
     transition: all .1s ease;
