@@ -12,11 +12,13 @@ const Nav = () => {
     const setWritingSystemsScroll = () => {
         const writingSystemsDisplay = document.querySelector(".writing-systems-display")
         const target = document.querySelector(`#${navPath[0]} .${navPath[1]}`)
+
+        console.log(navPath)
         
         writingSystemsDisplay.scrollLeft = target.offsetLeft
     }
 
-    const setSelectedStyle = (target) => {
+    const setSelectedStyle = () => {
         const lists = Array.from(navRef.current.querySelectorAll("ul"))
 
         lists.forEach((list, index) => {
@@ -57,16 +59,24 @@ const Nav = () => {
         setSelectedStyle()
         setWritingSystemsScroll()
 
+        window.addEventListener("resize", setWritingSystemsScroll)
+
         Array.from(navButtons).forEach((item) => {
             item.addEventListener("click", handleClick)
         })
 
         return () => {
+            window.removeEventListener("resize", setWritingSystemsScroll)
+            
             Array.from(navButtons).forEach((item) => {
                 item.removeEventListener("click", handleClick)
             })
         }
     }, [navPath])
+
+    useEffect(() => {
+        
+    }, [])
 
     return (
         <nav ref={navRef} className="nav">
