@@ -1,9 +1,11 @@
 .nav {
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
+    transition: all .3s ease;
 }
 .nav ul {
     display: flex;
@@ -17,4 +19,8 @@
     height: 30px;
     text-decoration: none;
     transition: all .1s ease;
+}
+
+.close .nav {
+    height: 0px;
 }
