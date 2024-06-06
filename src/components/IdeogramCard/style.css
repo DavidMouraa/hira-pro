@@ -12,7 +12,7 @@
     font-weight: bold;
     cursor: pointer;
     user-select: none;
-    transition: border-bottom .1s ease;
+    transition: all .1s ease;
 }
 .ideogram-card:hover {
     border-bottom: 5px solid;
@@ -22,15 +22,6 @@
 }
 .ideogram-card .romanji {
     font-size: 1.7rem;
-    
-}
-
-/* Selecionado */
-.selected {
-    color: white;
-    border-color: white;
-    outline: 2px solid black;
-    background: black;
 }
 
 /* Animações */

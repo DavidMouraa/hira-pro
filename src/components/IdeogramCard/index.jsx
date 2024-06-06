@@ -1,5 +1,5 @@
 import "./style.css"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 
 const IdeogramCard = ({ideogram, romanji, sizeDivision, mouseDownStatus, selection, writingSystemKey, kanaKey, setKey, writingSystems, setWritingSystems}) => {
     const ideogramCardRef = useRef()
@@ -34,7 +34,6 @@ const IdeogramCard = ({ideogram, romanji, sizeDivision, mouseDownStatus, selecti
     }
 
     const handleSelection = (e) => {
-        console.log(e.type)
         if (e.type === "mousedown" || mouseDownStatus) {
             setClickAnimation()
             setSelectionStatus()
