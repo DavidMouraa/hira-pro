@@ -1,0 +1,22 @@
+.header {
+    border-bottom: 2px solid black;
+}
+.header .nav-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header .nav-wrap .controller {
+    display: flex;
+    border: none;
+    background: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: all .3s ease;
+}
+
+.header .close .controller {
+    transform: rotate(0deg);
+}
