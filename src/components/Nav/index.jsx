@@ -67,16 +67,12 @@ const Nav = () => {
 
         return () => {
             window.removeEventListener("resize", setWritingSystemsScroll)
-            
+
             Array.from(navButtons).forEach((item) => {
                 item.removeEventListener("click", handleClick)
             })
         }
     }, [navPath])
-
-    useEffect(() => {
-        
-    }, [])
 
     return (
         <nav ref={navRef} className="nav">
