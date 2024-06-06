@@ -16,7 +16,7 @@ const Nav = () => {
         writingSystemsDisplay.scrollLeft = target.offsetLeft
     }
 
-    const setSelectedStyle = (target) => {
+    const setSelectedStyle = () => {
         const lists = Array.from(navRef.current.querySelectorAll("ul"))
 
         lists.forEach((list, index) => {
@@ -67,6 +67,10 @@ const Nav = () => {
             })
         }
     }, [navPath])
+
+    useEffect(() => {
+        window.addEventListener("resize", setWritingSystemsScroll)
+    }, [])
 
     return (
         <nav ref={navRef} className="nav">
